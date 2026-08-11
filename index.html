@@ -402,7 +402,7 @@
   <!-- ============ 03 PAPERS ============ -->
   <section id="papers" data-screen-label="Publications" style="border-bottom: 1px solid #1c2d48;">
     <div style="max-width: 1060px; margin: 0 auto; padding: clamp(48px, 10vw, 72px) clamp(20px, 5vw, 28px);">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: #fb923c; animation-name: rise; animation-duration: 0.8s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 30%;"><span style="white-space: nowrap;">SECTION 03</span><span style="font-size: 10px; letter-spacing: 0.3em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">PUBLICATIONS</span><span style="display: inline-block; vertical-align: middle; width: 48px; height: 1px; background: #1c2d48; margin-left: 16px;"></span><span style="font-size: 10.5px; letter-spacing: 0.12em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">11 PAPERS · 2021–2026</span></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: #fb923c; animation-name: rise; animation-duration: 0.8s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 30%;"><span style="white-space: nowrap;">SECTION 03</span><span style="font-size: 10px; letter-spacing: 0.3em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">PUBLICATIONS</span><span style="display: inline-block; vertical-align: middle; width: 48px; height: 1px; background: #1c2d48; margin-left: 16px;"></span><span style="font-size: 10.5px; letter-spacing: 0.12em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">12 PAPERS · 2021–2026</span></div>
       <h2 style="margin: 14px 0 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(24px, 5.5vw, 32px); line-height: 1.35; color: #e8eef5; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">{{ t.h2Papers }}</h2>
 
       <div style="margin-top: 40px; display: flex; flex-direction: column;">
@@ -698,6 +698,15 @@ class Component extends DCLogic {
         year: '2026',
         items: [
           {
+            href: 'https://doi.org/10.1007/s00134-026-08575-3',
+            title: 'Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a target trial emulation',
+            authorsPre: '',
+            me: 'T. Nakashima',
+            authorsPost: ', T. Ichinomiya, M. Nakajima, T. Shinozaki, J. Shibata, T. Goto, S. Sato, T. Hara',
+            venue: 'Intensive Care Medicine',
+            first: true,
+          },
+          {
             href: 'https://researchmap.jp/nakataka8228',
             title: 'The eGFR difference between creatinine-based and cystatin-C-based equations is also important in an Asian population within the J-CKD-DB-Ex',
             authorsPre: '',
@@ -979,7 +988,7 @@ class Component extends DCLogic {
       setEn: () => this._setLang('en'),
       societies: societiesJa.map((x) => ({ name: isEn ? x.nameEn : x.name, since: x.since })),
       footerCopy: '© 2026 NAKASHIMA TAKAYA',
-      statPapers: Math.round(11 * (this.state.statT ?? 1)),
+      statPapers: Math.round(12 * (this.state.statT ?? 1)),
       statBooks: Math.round(6 * (this.state.statT ?? 1)),
       statTalks: Math.round(4 * (this.state.statT ?? 1)),
       statAwards: Math.round(1 * (this.state.statT ?? 1)),

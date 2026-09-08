@@ -178,6 +178,12 @@
         <a href="https://x.com/naka_takaya" target="_blank" rel="noopener" style="color: #b8c6d9; padding: 3px 0; background: linear-gradient(#fb923c, #fb923c) no-repeat left bottom / 0% 1px; transition: color 120ms, background-size 240ms;" style-hover="color: #fb923c; background-size: 100% 1px;">X @naka_takaya ↗</a>
         <a href="Takaya_Nakashima_CV.pdf" target="_blank" rel="noopener" style="color: #b8c6d9; padding: 3px 0; background: linear-gradient(#fb923c, #fb923c) no-repeat left bottom / 0% 1px; transition: color 120ms, background-size 240ms;" style-hover="color: #fb923c; background-size: 100% 1px;">CV (PDF) ↗</a>
       </div>
+      <a href="#awards" style="margin-top: 26px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; max-width: 560px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; color: #7a8ba8; animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s both; transition: color 120ms;" style-hover="color: #e8eef5;">
+        <span style="color: #fb923c;">LATEST</span>
+        <span style="color: #4a5c7a; letter-spacing: 0.06em;">{{ latest.date }}</span>
+        <span style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0; color: #e8eef5;">{{ latest.title }}</span>
+        <span style="color: #4a5c7a; letter-spacing: 0;">→</span>
+      </a>
       </div>
 
       <!-- business card (click to flip) -->
@@ -248,6 +254,12 @@
         <a href="https://x.com/naka_takaya" target="_blank" rel="noopener" style="color: #b8c6d9; padding: 3px 0; background: linear-gradient(#fb923c, #fb923c) no-repeat left bottom / 0% 1px; transition: color 120ms, background-size 240ms;" style-hover="color: #fb923c; background-size: 100% 1px;">X @naka_takaya ↗</a>
         <a href="Takaya_Nakashima_CV.pdf" target="_blank" rel="noopener" style="color: #b8c6d9; padding: 3px 0; background: linear-gradient(#fb923c, #fb923c) no-repeat left bottom / 0% 1px; transition: color 120ms, background-size 240ms;" style-hover="color: #fb923c; background-size: 100% 1px;">CV (PDF) ↗</a>
       </div>
+      <a href="#awards" style="margin-top: 26px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; max-width: 560px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; color: #7a8ba8; animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.6s both; transition: color 120ms;" style-hover="color: #e8eef5;">
+        <span style="color: #fb923c;">LATEST</span>
+        <span style="color: #4a5c7a; letter-spacing: 0.06em;">{{ latest.date }}</span>
+        <span style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0; color: #e8eef5;">{{ latest.title }}</span>
+        <span style="color: #4a5c7a; letter-spacing: 0;">→</span>
+      </a>
 
       <div style="margin-top: 36px; display: flex; flex-direction: column; gap: 10px; align-items: center; animation: fadeUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s both;">
         <div onClick="{{ toggleFlip }}" style="width: 100%; max-width: 344px; aspect-ratio: 91 / 55; perspective: 1200px; cursor: pointer; animation: floaty 7s ease-in-out infinite;">
@@ -494,15 +506,15 @@
       <h2 style="margin: 14px 0 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(24px, 5.5vw, 32px); line-height: 1.35; color: #e8eef5; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">{{ t.h2Writing }}</h2>
 
       <div style="margin-top: 40px; border-top: 1px solid #1e2f4b; display: flex; flex-direction: column;">
-        <sc-for list="{{ writings }}" as="w" hint-placeholder-count="5">
-          <div style="padding: 20px 0; border-bottom: 1px solid #1c2d48; display: flex; flex-direction: column; gap: 8px; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">
-            <div style="display: flex; align-items: baseline; gap: 12px;">
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #fb923c; white-space: nowrap;">{{ w.date }}</div>
-              <div style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #4a5c7a; white-space: nowrap;">{{ w.tag }}</div>
+        <sc-for list="{{ writings }}" as="w" hint-placeholder-count="6">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 22px 0; border-bottom: 1px solid #1c2d48; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">
+            <div style="flex: 0 0 132px; display: flex; flex-direction: column; gap: 5px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #fb923c;">{{ w.date }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #4a5c7a;">{{ w.tag }}</span>
             </div>
-            <div>
-              <div style="font-family: 'Shippori Mincho B1', serif; font-weight: 600; font-size: 16px; line-height: 1.7; color: #e8eef5;">{{ w.title }}</div>
-              <div style="margin-top: 5px; font-size: 13px; color: #7a8ba8;">{{ w.meta }}</div>
+            <div style="flex: 1 1 340px; min-width: min(100%, 280px);">
+              <div style="font-family: 'Shippori Mincho B1', serif; font-weight: 600; font-size: 17px; line-height: 1.65; color: #e8eef5;">{{ w.title }}</div>
+              <div style="margin-top: 6px; font-size: 13px; color: #7a8ba8;">{{ w.meta }}</div>
             </div>
           </div>
         </sc-for>
@@ -522,7 +534,7 @@
           <a href="{{ n.href }}" target="_blank" rel="noopener" style="display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 24px 0; border-bottom: 1px solid #1c2d48; transition: background 120ms, padding-left 220ms ease; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;" style-hover="background: #0f1e33; padding-left: 14px;">
             <div style="flex: 0 0 132px; display: flex; flex-direction: column; gap: 5px;">
               <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #fb923c;">{{ n.date }}</span>
-              <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: #4a5c7a;">{{ n.tag }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #4a5c7a;">{{ n.tag }}</span>
             </div>
             <div style="flex: 1 1 340px; min-width: min(100%, 280px);">
               <div style="font-family: 'Shippori Mincho B1', serif; font-weight: 600; font-size: 17px; line-height: 1.65; color: #e8eef5;">{{ n.title }}</div>
@@ -544,19 +556,24 @@
   <!-- ============ 07 TALKS ============ -->
   <section id="talks" data-screen-label="Presentations" style="border-bottom: 1px solid #1c2d48;">
     <div style="max-width: 1060px; margin: 0 auto; padding: clamp(48px, 10vw, 72px) clamp(20px, 5vw, 28px);">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: #fb923c; animation-name: rise; animation-duration: 0.8s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 30%;"><span style="white-space: nowrap;">SECTION 07</span><span style="font-size: 10px; letter-spacing: 0.3em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">TALKS</span><span style="display: inline-block; vertical-align: middle; width: 48px; height: 1px; background: #1c2d48; margin-left: 16px;"></span><span style="font-size: 10.5px; letter-spacing: 0.12em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">4 TALKS</span></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: #fb923c; animation-name: rise; animation-duration: 0.8s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 30%;"><span style="white-space: nowrap;">SECTION 07</span><span style="font-size: 10px; letter-spacing: 0.3em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">TALKS</span><span style="display: inline-block; vertical-align: middle; width: 48px; height: 1px; background: #1c2d48; margin-left: 16px;"></span><span style="font-size: 10.5px; letter-spacing: 0.12em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">5 TALKS</span></div>
       <h2 style="margin: 14px 0 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(24px, 5.5vw, 32px); line-height: 1.35; color: #e8eef5; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">{{ t.h2Talks }}</h2>
 
       <div style="margin-top: 40px; border-top: 1px solid #1e2f4b; display: flex; flex-direction: column;">
-        <sc-for list="{{ talks }}" as="tk" hint-placeholder-count="4">
-          <div style="padding: 20px 0; border-bottom: 1px solid #1c2d48; display: flex; flex-direction: column; gap: 8px; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">
-            <div style="display: flex; align-items: baseline; gap: 12px;">
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #fb923c; white-space: nowrap;">{{ tk.date }}</div>
-              <div style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: #4a5c7a; white-space: nowrap;">{{ t.oral }}</div>
+        <sc-for list="{{ talks }}" as="tk" hint-placeholder-count="5">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 22px 0; border-bottom: 1px solid #1c2d48; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">
+            <div style="flex: 0 0 132px; display: flex; flex-direction: column; gap: 5px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #fb923c;">{{ tk.date }}</span>
+              <sc-if value="{{ tk.award }}" hint-placeholder-val="{{ false }}">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #fb923c;">{{ tk.tag }}</span>
+              </sc-if>
+              <sc-if value="{{ tk.plain }}" hint-placeholder-val="{{ true }}">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #4a5c7a;">{{ tk.tag }}</span>
+              </sc-if>
             </div>
-            <div>
-              <div style="font-family: 'Shippori Mincho B1', serif; font-weight: 600; font-size: 16px; line-height: 1.7; color: #e8eef5;">{{ tk.title }}</div>
-              <div style="margin-top: 5px; font-size: 13px; color: #7a8ba8;">{{ tk.meta }}</div>
+            <div style="flex: 1 1 340px; min-width: min(100%, 280px);">
+              <div style="font-family: 'Shippori Mincho B1', serif; font-weight: 600; font-size: 17px; line-height: 1.65; color: #e8eef5;">{{ tk.title }}</div>
+              <div style="margin-top: 6px; font-size: 13px; color: #7a8ba8;">{{ tk.meta }}</div>
             </div>
           </div>
         </sc-for>
@@ -567,17 +584,24 @@
   <!-- ============ 08 AWARDS + MEMBERSHIPS ============ -->
   <section id="awards" data-screen-label="Awards" style="border-bottom: 1px solid #1c2d48; background: #0a1628;">
     <div style="max-width: 1060px; margin: 0 auto; padding: clamp(48px, 10vw, 72px) clamp(20px, 5vw, 28px);">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: #fb923c; animation-name: rise; animation-duration: 0.8s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 30%;"><span style="white-space: nowrap;">SECTION 08</span><span style="font-size: 10px; letter-spacing: 0.3em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">AWARDS</span><span style="display: inline-block; vertical-align: middle; width: 48px; height: 1px; background: #1c2d48; margin-left: 16px;"></span></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; color: #fb923c; animation-name: rise; animation-duration: 0.8s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 30%;"><span style="white-space: nowrap;">SECTION 08</span><span style="font-size: 10px; letter-spacing: 0.3em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">AWARDS</span><span style="display: inline-block; vertical-align: middle; width: 48px; height: 1px; background: #1c2d48; margin-left: 16px;"></span><span style="font-size: 10.5px; letter-spacing: 0.12em; color: #4a5c7a; white-space: nowrap; margin-left: 16px;">2 AWARDS</span></div>
       <h2 style="margin: 14px 0 0; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: clamp(24px, 5.5vw, 32px); line-height: 1.35; color: #e8eef5; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">{{ t.h2Awards }}</h2>
 
-      <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
-        <div style="flex: 1 1 380px; min-width: 0; border-top: 1px solid #1e2f4b; padding-top: 20px; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">
-          <div style="display: flex; align-items: baseline; gap: 14px;">
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #fb923c;">2021.10</span>
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.2em; color: #4a5c7a;">AWARD</span>
-          </div>
-          <div style="margin-top: 12px; font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: 20px; color: #e8eef5;">{{ t.awardTitle }}</div>
-          <p style="margin: 10px 0 0; font-size: 13px; line-height: 1.9; color: #7a8ba8;">{{ t.awardDesc1 }}<br>{{ t.awardDesc2 }}</p>
+      <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: flex-start;">
+        <div style="flex: 1 1 460px; min-width: 0; border-top: 1px solid #1e2f4b; display: flex; flex-direction: column;">
+          <sc-for list="{{ awards }}" as="aw" hint-placeholder-count="2">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 22px 0; border-bottom: 1px solid #1c2d48; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">
+              <div style="flex: 0 0 132px; display: flex; flex-direction: column; gap: 5px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #fb923c;">{{ aw.date }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #4a5c7a;">{{ aw.tag }}</span>
+            </div>
+              <div style="flex: 1 1 280px; min-width: min(100%, 240px);">
+                <div style="font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: 20px; line-height: 1.5; color: #e8eef5;">{{ aw.title }}</div>
+                <div style="margin-top: 5px; font-size: 13px; color: #7a8ba8;">{{ aw.org }}</div>
+                <p style="margin: 10px 0 0; font-size: 13.5px; line-height: 1.9; color: #b8c6d9;">{{ aw.desc }}</p>
+              </div>
+            </div>
+          </sc-for>
         </div>
         <ul style="flex: 1 1 260px; min-width: 0; list-style: none; margin: 0; padding: 0; border-top: 1px solid #1e2f4b; display: flex; flex-direction: column; animation-name: rise; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); animation-fill-mode: both; animation-timeline: view(); animation-range: entry 0% entry 42%;">
           <sc-for list="{{ societies }}" as="soc" hint-placeholder-count="5">
@@ -857,10 +881,11 @@ class Component extends DCLogic {
     ];
 
     const talks = [
-      { date: '2024.03', title: '集中治療を要した菌血症患者における菌種と転帰の関連：過去起点コホート研究', meta: '第51回 日本集中治療医学会学術集会' },
-      { date: '2023.09', title: '循環器疾患における乳酸値変化を用いた循環安定の予測：混合効果モデルに基づく関数データ解析の臨床的応用', meta: '2023年度 統計関連学会連合大会' },
-      { date: '2023.02', title: '心臓サルコイドーシス患者における心血管イベント発症時間の予測モデルの構築', meta: '第33回 日本疫学会学術総会' },
-      { date: '2022.11', title: '非線形混合効果モデルに基づく関数データを用いた急性期循環器疾患における急性期離脱時期の予測', meta: '日本臨床疫学会 第5回年次学術大会' },
+      { date: '2026.09', title: '敗血症性ショックにおけるノルアドレナリン高用量到達後のバソプレシン超早期併用と早期併用の比較：公開ICUデータベースを用いた後ろ向き観察研究（target trial emulation）', meta: '九州麻酔科学会 第64回大会', tag: '最優秀演題', award: true },
+      { date: '2024.03', title: '集中治療を要した菌血症患者における菌種と転帰の関連：過去起点コホート研究', meta: '第51回 日本集中治療医学会学術集会', tag: '口演' },
+      { date: '2023.09', title: '循環器疾患における乳酸値変化を用いた循環安定の予測：混合効果モデルに基づく関数データ解析の臨床的応用', meta: '2023年度 統計関連学会連合大会', tag: '口演' },
+      { date: '2023.02', title: '心臓サルコイドーシス患者における心血管イベント発症時間の予測モデルの構築', meta: '第33回 日本疫学会学術総会', tag: '口演' },
+      { date: '2022.11', title: '非線形混合効果モデルに基づく関数データを用いた急性期循環器疾患における急性期離脱時期の予測', meta: '日本臨床疫学会 第5回年次学術大会', tag: '口演' },
     ];
 
     const societiesJa = [
@@ -887,10 +912,20 @@ class Component extends DCLogic {
     ];
 
     const talksEn = [
-      { date: '2024.03', title: 'Causative organism and outcome in bacteremia requiring intensive care: a retrospective cohort study', meta: '51st Annual Meeting, Japanese Society of Intensive Care Medicine' },
-      { date: '2023.09', title: 'Predicting hemodynamic stabilization from lactate trajectories: functional data analysis with mixed effects models', meta: 'Japanese Federation of Statistical Science Associations 2023' },
-      { date: '2023.02', title: 'A prediction model for time to cardiovascular events in cardiac sarcoidosis', meta: '33rd Annual Meeting, Japan Epidemiological Association' },
-      { date: '2022.11', title: 'Predicting recovery time in acute cardiovascular disease using functional data based on nonlinear mixed effects models', meta: '5th Annual Meeting, Japanese Society for Clinical Epidemiology' },
+      { date: '2026.09', title: 'Ultra-early versus early adjunctive vasopressin after high-dose norepinephrine in septic shock: a retrospective observational study using a public ICU database (target trial emulation)', meta: '64th Annual Meeting, Kyushu Society of Anesthesiologists', tag: 'BEST PRESENTATION', award: true },
+      { date: '2024.03', title: 'Causative organism and outcome in bacteremia requiring intensive care: a retrospective cohort study', meta: '51st Annual Meeting, Japanese Society of Intensive Care Medicine', tag: 'ORAL' },
+      { date: '2023.09', title: 'Predicting hemodynamic stabilization from lactate trajectories: functional data analysis with mixed effects models', meta: 'Japanese Federation of Statistical Science Associations 2023', tag: 'ORAL' },
+      { date: '2023.02', title: 'A prediction model for time to cardiovascular events in cardiac sarcoidosis', meta: '33rd Annual Meeting, Japan Epidemiological Association', tag: 'ORAL' },
+      { date: '2022.11', title: 'Predicting recovery time in acute cardiovascular disease using functional data based on nonlinear mixed effects models', meta: '5th Annual Meeting, Japanese Society for Clinical Epidemiology', tag: 'ORAL' },
+    ];
+
+    const awardsJa = [
+      { date: '2026.09', tag: 'BEST PRESENTATION', title: '九州麻酔科学会 第64回大会 最優秀演題', org: '日本麻酔科学会 九州支部', desc: '「敗血症性ショックにおけるノルアドレナリン高用量到達後のバソプレシン超早期併用と早期併用の比較：公開ICUデータベースを用いた後ろ向き観察研究（target trial emulation）」' },
+      { date: '2021.10', tag: 'AWARD', title: '育成賞［臨床研究部門］', org: '第87回 日本呼吸器学会・日本結核病学会 非結核性抗酸菌症学会 日本サルコイドーシス／肉芽腫性疾患学会 九州支部秋季学術講演会', desc: '「録音肺音の分離技術解析の透析前後の coarse crackles 変化への臨床的応用」' },
+    ];
+    const awardsEn = [
+      { date: '2026.09', tag: 'BEST PRESENTATION', title: 'Best Presentation Award, 64th Annual Meeting of the Kyushu Society of Anesthesiologists', org: 'Japanese Society of Anesthesiologists, Kyushu Branch', desc: 'Ultra-early versus early adjunctive vasopressin after high-dose norepinephrine in septic shock: a retrospective observational study using a public ICU database (target trial emulation)' },
+      { date: '2021.10', tag: 'AWARD', title: 'Young Investigator Award (Clinical Research)', org: '87th Kyushu Branch Autumn Meeting, Japanese Respiratory Society and affiliated societies', desc: 'Clinical application of separation-technique analysis of recorded lung sounds to coarse crackle changes before and after dialysis' },
     ];
 
     const T = {
@@ -934,9 +969,7 @@ class Component extends DCLogic {
         noteLead: '生成AIを使った文献検索・スライド作成、周術期データベースの解説。論文にはしない実務の手順を、記事として置いている。',
         noteAll: 'note のすべての記事を見る',
         oral: '口演',
-        awardTitle: '育成賞［臨床研究部門］',
-        awardDesc1: '「録音肺音の分離技術解析の透析前後の coarse crackles 変化への臨床的応用」',
-        awardDesc2: '第87回 日本呼吸器学会・日本結核病学会 非結核性抗酸菌症学会 日本サルコイドーシス／肉芽腫性疾患学会 九州支部秋季学術講演会',
+        latestTitle: '九州麻酔科学会 第64回大会 最優秀演題',
       },
       en: {
         heroPre: 'A ', heroAccent: 'bridge', heroPost: ' between clinical care and statistics.',
@@ -978,9 +1011,7 @@ class Component extends DCLogic {
         noteLead: 'Literature search and slide production with generative AI, and notes on perioperative databases. Practical procedures that never become papers are kept here as articles.',
         noteAll: 'Read all articles on note',
         oral: 'ORAL',
-        awardTitle: 'Young Investigator Award (Clinical Research)',
-        awardDesc1: 'Clinical application of separation-technique analysis of recorded lung sounds to coarse crackle changes before and after dialysis',
-        awardDesc2: '87th Kyushu Branch Autumn Meeting, Japanese Respiratory Society and affiliated societies',
+        latestTitle: 'Best Presentation Award, 64th Kyushu Anesthesia Meeting',
       },
     };
 
@@ -997,12 +1028,14 @@ class Component extends DCLogic {
       footerCopy: '© 2026 NAKASHIMA TAKAYA',
       statPapers: Math.round(12 * (this.state.statT ?? 1)),
       statBooks: Math.round(6 * (this.state.statT ?? 1)),
-      statTalks: Math.round(4 * (this.state.statT ?? 1)),
-      statAwards: Math.round(1 * (this.state.statT ?? 1)),
+      statTalks: Math.round(5 * (this.state.statT ?? 1)),
+      statAwards: Math.round(2 * (this.state.statT ?? 1)),
       pubYears,
       writings: isEn ? writingsEn : writings,
       notes: isEn ? notesEn : notes,
-      talks: isEn ? talksEn : talks,
+      talks: (isEn ? talksEn : talks).map((x) => Object.assign({}, x, { plain: !x.award })),
+      awards: isEn ? awardsEn : awardsJa,
+      latest: { date: '2026.09', title: (isEn ? T.en : T.ja).latestTitle },
       portraitMono: portraitMono,
       portraitColor: !portraitMono,
       isMobile: this.state.isMobile,

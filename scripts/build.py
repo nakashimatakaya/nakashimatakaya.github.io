@@ -56,15 +56,15 @@ for lang in ['ja','en']:
 <meta property="og:description" content="{esc(cp['heroLead'])}">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://nakashimatakaya.github.io{hreflang}">
-<meta property="og:image" content="https://nakashimatakaya.github.io/portrait.png">
+<meta property="og:image" content="https://nakashimatakaya.github.io/portrait.jpg">
 <meta name="theme-color" content="#172d34">
 <link rel="icon" href="{base}favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{base}style.css?v=20260922c">
+<link rel="stylesheet" href="{base}style.css?v=20260922d">
 <script defer src="{base}site.js?v=20260922c"></script>
-<script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'Person','name':'中島誉也','alternateName':'Takaya Nakashima','jobTitle':'Anesthesiologist and Biostatistician','url':'https://nakashimatakaya.github.io/','image':'https://nakashimatakaya.github.io/portrait.png','worksFor':{'@type':'Organization','name':'Nagasaki University Hospital'},'sameAs':['https://researchmap.jp/nakataka8228','https://orcid.org/0009-0001-4214-3945','https://github.com/nakashimatakaya']},ensure_ascii=False)}</script>
+<script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'Person','name':'中島誉也','alternateName':'Takaya Nakashima','jobTitle':'Anesthesiologist and Biostatistician','url':'https://nakashimatakaya.github.io/','image':'https://nakashimatakaya.github.io/portrait.jpg','worksFor':{'@type':'Organization','name':'Nagasaki University Hospital'},'sameAs':['https://researchmap.jp/nakataka8228','https://orcid.org/0009-0001-4214-3945','https://github.com/nakashimatakaya']},ensure_ascii=False)}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">{'本文へ' if not en else 'Skip to content'}</a>
@@ -86,7 +86,7 @@ for lang in ['ja','en']:
    <p class="hero-lead">{esc(cp['heroLead'])}</p>
    <div class="hero-links"><a class="button" href="#research">{'研究・論文を見る' if not en else 'Explore my research'}<span aria-hidden="true">↗</span></a><a class="quiet-link" href="#profile">{'プロフィール' if not en else 'About me'}<span aria-hidden="true">↓</span></a></div>
   </div>
-  <figure class="hero-photo"><img src="{base}portrait.png" alt="{'中島誉也のポートレート' if not en else 'Portrait of Takaya Nakashima'}" width="638" height="658" fetchpriority="high"><figcaption>NAGASAKI, JAPAN</figcaption></figure>
+  <figure class="hero-photo"><img src="{base}portrait.jpg" alt="{'中島誉也のポートレート' if not en else 'Portrait of Takaya Nakashima'}" width="1968" height="1968" fetchpriority="high"><figcaption>NAGASAKI, JAPAN</figcaption></figure>
  </div>
  <div class="hero-bottom container"><p>CLINICAL CARE<br>AND RESEARCH</p><dl><div><dt>{'論文' if not en else 'Publications'}</dt><dd>{len(papers)}</dd></div><div><dt>{'執筆・翻訳' if not en else 'Writing & translation'}</dt><dd>{len(writings)}</dd></div><div><dt>{'講演・学会発表' if not en else 'Talks & presentations'}</dt><dd>{sum(not x.get('upcoming') for x in d['talks'])}</dd></div><div><dt>{'受賞' if not en else 'Awards'}</dt><dd>{len(d['awards'])}</dd></div></dl><a href="#profile" class="scroll-cue">SCROLL <span>↓</span></a></div>
 </section>

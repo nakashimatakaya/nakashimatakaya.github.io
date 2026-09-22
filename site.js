@@ -19,7 +19,7 @@ document.addEventListener('keydown', (event) => {
     menuButton.focus();
   }
 });
-window.matchMedia('(min-width: 851px)').addEventListener('change', (event) => {
+window.matchMedia('(min-width: 1181px)').addEventListener('change', (event) => {
   if (event.matches) closeMenu();
 });
 // Open a collapsed section when a direct link targets content inside it.

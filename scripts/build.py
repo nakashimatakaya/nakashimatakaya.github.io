@@ -57,13 +57,13 @@ for lang in ['ja','en']:
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://nakashimatakaya.github.io{hreflang}">
 <meta property="og:image" content="https://nakashimatakaya.github.io/portrait.jpg">
-<meta name="theme-color" content="#172d34">
+<meta name="theme-color" content="#641f37">
 <link rel="icon" href="{base}favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{base}style.css?v=20260922d">
-<script defer src="{base}site.js?v=20260922c"></script>
+<link rel="stylesheet" href="{base}style.css?v=20260922e">
+<script defer src="{base}site.js?v=20260922e"></script>
 <script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'Person','name':'中島誉也','alternateName':'Takaya Nakashima','jobTitle':'Anesthesiologist and Biostatistician','url':'https://nakashimatakaya.github.io/','image':'https://nakashimatakaya.github.io/portrait.jpg','worksFor':{'@type':'Organization','name':'Nagasaki University Hospital'},'sameAs':['https://researchmap.jp/nakataka8228','https://orcid.org/0009-0001-4214-3945','https://github.com/nakashimatakaya']},ensure_ascii=False)}</script>
 </head>
 <body>

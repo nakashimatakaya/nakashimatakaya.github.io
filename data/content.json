@@ -1,0 +1,734 @@
+{
+  "ja": {
+    "pubYears": [
+      {
+        "year": "2026",
+        "items": [
+          {
+            "href": "https://doi.org/10.1007/s00134-026-08575-3",
+            "title": "Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a target trial emulation",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Ichinomiya, M. Nakajima, T. Shinozaki, J. Shibata, T. Goto, S. Sato, T. Hara",
+            "venue": "Intensive Care Medicine",
+            "first": true
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228",
+            "title": "The eGFR difference between creatinine-based and cystatin-C-based equations is also important in an Asian population within the J-CKD-DB-Ex",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", H. Nagasu, A. Hirano, M. Iwagami, T. Goto, N. Kashihara, M. Nangaku, Y. Hirakawa",
+            "venue": "Scientific Reports",
+            "first": true
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/52240508",
+            "title": "Prediction of estimated glomerular filtration rate slope and kidney prognosis of patients with chronic kidney disease",
+            "authorsPre": "H. Nagasu, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", K. Ihara, R. Fujimori, T. Goto, D. Nitta, S. Kishi, T. Sasaki, N. Kashihara",
+            "venue": "Scientific Reports",
+            "first": false,
+            "coFirst": true
+          }
+        ]
+      },
+      {
+        "year": "2025",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/51880036",
+            "title": "Proteinuria reduction as a surrogate endpoint for clinical study of IgA nephropathy in Japanese patients: data from the J-CKD-DB-Ex",
+            "authorsPre": "N. Kashihara, S. Itano, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto, K. Yoshihara, S. Eguchi, K. Iekushi, Y. Isaka, H. Nagasu",
+            "venue": "Clinical and Experimental Nephrology",
+            "first": false,
+            "coFirst": true
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/51027689",
+            "title": "A reappraisal of association between ventilator-associated events and mortality among critically ill patients using marginal structural model: multicenter observational study",
+            "authorsPre": "S. Nakahashi, K. Suzuki, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", Y. Hayashi, Y. Tanabe, A. Tanaka, S. Hashiuchi, C. Yamashita, Y. Ito, T. Wada, et al.",
+            "venue": "Intensive Care Medicine",
+            "first": false
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/49239661",
+            "title": "Phenotypes of Functional Decline or Recovery in Sepsis ICU Survivors: Insights From a 1-Year Follow-Up Multicenter Cohort Analysis",
+            "authorsPre": "K. Liu, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto, K. Nakamura, H. Nakano, M. Motoki, H. Kamijo, A. Matsuoka, K. Ishii, Y. Morita, et al.",
+            "venue": "Critical Care Medicine",
+            "first": false,
+            "coFirst": true
+          },
+          {
+            "href": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202502273103904762",
+            "title": "J-CKD-DB-Exを用いた慢性腎臓病患者のeGFR slope予測モデルの開発とwebアプリによるリスクの可視化",
+            "authorsPre": "長洲一, ",
+            "me": "中島誉也",
+            "authorsPost": ", 渭原克仁, 藤森遼, 後藤匡啓, 新田大介, 岸誠司, 佐々木環, 柏原直樹",
+            "venue": "日本腎臓学会誌 67(4)",
+            "first": false
+          }
+        ]
+      },
+      {
+        "year": "2024",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/48580003",
+            "title": "Estimating the Timeframe of Lactate Reduction in Acute Cardiovascular Disease Using Functional Data Analysis Based on Nonlinear Mixed Effects Models",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", S. Sato, H. Matsui, A. Mizuno",
+            "venue": "International Heart Journal 65(6)",
+            "first": true
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/45877886",
+            "title": "Association of serum magnesium levels with renal prognosis in patients with chronic kidney disease",
+            "authorsPre": "S. Kishi, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto, H. Nagasu, C. R. Brooks, H. Okada, K. Tamura, T. Nakano, I. Narita, S. Maruyama, et al.",
+            "venue": "Clinical and Experimental Nephrology",
+            "first": false,
+            "coFirst": true
+          }
+        ]
+      },
+      {
+        "year": "2023",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/43261512",
+            "title": "Clinical implications of urine output-based sepsis-associated acute kidney injury",
+            "authorsPre": "D. Kasugai, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto",
+            "venue": "Intensive Care Medicine",
+            "first": false
+          }
+        ]
+      },
+      {
+        "year": "2022",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/43860537",
+            "title": "新しい録音機器と解析技術を用いた肺音解析システムの医師聴診の補助ツールとしての可能性",
+            "authorsPre": "",
+            "me": "中島誉也",
+            "authorsPost": ", 尾長谷靖, 深堀範, 福島千鶴, 入来隼, 永江由香, 山口博之, 坂本憲穂, 石松祐二, 山田頼弥, et al.",
+            "venue": "長崎医学会雑誌 97(1)",
+            "first": true
+          }
+        ]
+      },
+      {
+        "year": "2021",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/40018542",
+            "title": "Association between preoperative toe perfusion index and maternal core temperature decrease during cesarean delivery under spinal anesthesia: a prospective cohort study",
+            "authorsPre": "S. Kaneko, K. Hara, S. Sato, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", Y. Kawazoe, M. Taguchi, S. Urabe, A. Nakao, K. Hamada, M. Yamaguchi, et al.",
+            "venue": "BMC Anesthesiology 21(1)",
+            "first": false
+          }
+        ]
+      }
+    ],
+    "writings": [
+      {
+        "date": "2026.06",
+        "title": "論文執筆における生成AIの活用：臨床研究の研究立案と文献調査を加速する実践ガイド",
+        "meta": "呼吸療法（日本呼吸療法医学会）／ 単著",
+        "tag": "総説"
+      },
+      {
+        "date": "2025.06",
+        "title": "レジデントノート Vol.27 No.6 医学情報の集め方・活かし方",
+        "meta": "羊土社 ／ 分担執筆「生成AI時代の論文読解」",
+        "tag": "分担執筆"
+      },
+      {
+        "date": "2025.03.19",
+        "title": "TRIPOD+AI Expandedチェックリスト 有志翻訳による日本語版（version 1.1）",
+        "meta": "共同翻訳：佐藤俊太朗、中島誉也、後藤隆之介、後藤匡啓。TRIPOD公式サイト掲載。日付は日本語版の作成日。",
+        "tag": "共訳",
+        "href": "https://www.tripod-statement.org/wp-content/uploads/2025/03/TRIPODAI_250319.pdf"
+      },
+      {
+        "date": "2024.12",
+        "title": "日本心臓血管麻酔学会第29回学術大会 印象記",
+        "meta": "循環制御 45(2): 130–131。中島誉也。日本循環制御医学会。",
+        "tag": "学会印象記",
+        "href": "https://www.jsccm.org/files/upload/magazines/f08152d2fe64ba6b1aff0f4983292b21.pdf"
+      },
+      {
+        "date": "2024.09–2025.01",
+        "title": "面倒なタスクは任せてしまえ！ Gen AI時代のタイパ・コスパ論文執筆術",
+        "meta": "医学書院「医学界新聞プラス」全10回",
+        "tag": "連載",
+        "href": "https://www.igaku-shoin.co.jp/paperplus/series/00001"
+      },
+      {
+        "date": "2024.05",
+        "title": "現代疫学 (Modern Epidemiology, 4th ed.)",
+        "meta": "学術図書出版社 ／ 共訳「第18章 層別化と標準化」",
+        "tag": "共訳"
+      },
+      {
+        "date": "2023.09",
+        "title": "忙しい研修医のためのAIツールを活用したタイパ・コスパ重視の文献検索・管理法",
+        "meta": "週刊医学界新聞（レジデント号）第3532号",
+        "tag": "寄稿"
+      }
+    ],
+    "notes": [
+      {
+        "date": "2025.06",
+        "tag": "GEN AI",
+        "title": "AIスライド＆学会ポスター作成完全ガイド — Genspark × Figma で資料作成を10分の1に",
+        "href": "https://note.com/nakashima_takaya/n/n3b833d52cec4"
+      },
+      {
+        "date": "2024.06",
+        "tag": "RESEARCH DX",
+        "title": "日々忙しい研究者がコスパ良く論文を書くためのTips 文献検索・管理編",
+        "href": "https://note.com/nakashima_takaya/n/nab5c8941cbc2"
+      },
+      {
+        "date": "2024.01",
+        "tag": "DATABASE",
+        "title": "オペ室のデータ革命：MOVER（Operating Room Vitals and Events Repository）完全解説",
+        "href": "https://note.com/nakashima_takaya/n/ne33aaf9f99a7"
+      }
+    ],
+    "talks": [
+      {
+        "date": "2026.10.13",
+        "title": "生成AI支援による統計解析実務の有用性と課題",
+        "meta": "SASユーザー総会2026 Day0企画セッション「アカデミアでの統計解析業務はどう進めるべきか」。中島誉也、佐藤俊太朗。14:25–14:50、SAS Institute Japan本社。プログラムは暫定。",
+        "tag": "登壇予定",
+        "upcoming": true,
+        "href": "https://sas-user2026.ywstat.jp/",
+        "plain": false,
+        "highlight": true
+      },
+      {
+        "date": "2026.09.19",
+        "title": "AI時代の臨床研究者の立ち振る舞い（生成AIとどう付き合うか）",
+        "meta": "第31回日本心臓血管麻酔学会 学術大会、教育講演2。オンデマンド配信のみ。配信期間：2026年9月19日～11月25日。",
+        "tag": "教育講演",
+        "href": "https://researchmap.jp/nakataka8228/presentations/55017048",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2026.09.05",
+        "title": "敗血症性ショックにおけるノルアドレナリン高用量到達後のバソプレシン超早期併用と早期併用の比較：公開ICUデータベースを用いた後ろ向き観察研究（target trial emulation）",
+        "meta": "九州麻酔科学会 第64回大会、演題番号Q01-03。北九州国際会議場。",
+        "tag": "最優秀演題",
+        "award": true,
+        "href": "https://www.micenavi.jp/jsashibu2026/search/detail_session/id:12160",
+        "plain": false,
+        "highlight": true
+      },
+      {
+        "date": "2025.07.24",
+        "title": "AIツールを用いた、日々忙しい研究者がコスパ良く論文を書くためのTips",
+        "meta": "長崎大学病院 臨床研究センター、2025年度 臨床研究に関する研修会。オンライン開催。",
+        "tag": "研修会講師",
+        "href": "https://www.mh.nagasaki-u.ac.jp/research/news/data/2025/20250724_seminar2025.pdf",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2024.03",
+        "title": "集中治療を要した菌血症患者における菌種と転帰の関連：過去起点コホート研究",
+        "meta": "第51回 日本集中治療医学会学術集会",
+        "tag": "口演",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2023.09",
+        "title": "循環器疾患における乳酸値変化を用いた循環安定の予測：混合効果モデルに基づく関数データ解析の臨床的応用",
+        "meta": "2023年度 統計関連学会連合大会",
+        "tag": "口演",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2023.02",
+        "title": "心臓サルコイドーシス患者における心血管イベント発症時間の予測モデルの構築",
+        "meta": "第33回 日本疫学会学術総会",
+        "tag": "口演",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2022.11",
+        "title": "非線形混合効果モデルに基づく関数データを用いた急性期循環器疾患における急性期離脱時期の予測",
+        "meta": "日本臨床疫学会 第5回年次学術大会",
+        "tag": "口演",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2021.10.22",
+        "title": "録音肺音の分離技術解析の透析前後のcoarse crackles変化への臨床的応用",
+        "meta": "第87回日本呼吸器学会・日本結核 非結核性抗酸菌症学会・日本サルコイドーシス/肉芽腫性疾患学会 九州支部秋季学術講演会。演題番号074。熊本城ホール。",
+        "tag": "育成賞（臨床研究部門）",
+        "award": true,
+        "href": "https://www.jrs.or.jp/meeting/kyushu/file/1022_87kyushu_program.pdf",
+        "plain": false,
+        "highlight": true
+      }
+    ],
+    "teaching": [
+      {
+        "date": "2026–",
+        "title": "医学統計学（歯学部）",
+        "meta": "長崎大学",
+        "tag": "担当科目",
+        "href": "https://researchmap.jp/nakataka8228/teaching_experience/55017056"
+      },
+      {
+        "date": "オンデマンド",
+        "title": "忙しい臨床家のためのAIで加速させる論文執筆DX術講座",
+        "meta": "mJOHNSNOW（株式会社mMEDICI）、全5回。講師として担当。",
+        "description": "研究テーマの探索、文献検索・管理、統計解析、論文執筆、スライド作成における生成AIとデジタルツールの活用を扱う。",
+        "tag": "講座",
+        "href": "https://note.com/mmedici/n/n291ca1469544"
+      }
+    ],
+    "keywords": [
+      "生存時間解析",
+      "関数データ解析",
+      "機械学習",
+      "経時的データ",
+      "敗血症",
+      "肺音解析",
+      "Copula",
+      "Heterogeneity",
+      "生成AI",
+      "生物統計学",
+      "因果推論",
+      "Target trial emulation",
+      "混合効果モデル",
+      "集中治療医学"
+    ],
+    "awards": [
+      {
+        "date": "2026.09",
+        "tag": "BEST PRESENTATION",
+        "title": "九州麻酔科学会 第64回大会 最優秀演題",
+        "org": "日本麻酔科学会 九州支部",
+        "desc": "「敗血症性ショックにおけるノルアドレナリン高用量到達後のバソプレシン超早期併用と早期併用の比較：公開ICUデータベースを用いた後ろ向き観察研究（target trial emulation）」"
+      },
+      {
+        "date": "2021.10",
+        "tag": "AWARD",
+        "title": "育成賞［臨床研究部門］",
+        "org": "第87回 日本呼吸器学会・日本結核病学会 非結核性抗酸菌症学会 日本サルコイドーシス／肉芽腫性疾患学会 九州支部秋季学術講演会",
+        "desc": "「録音肺音の分離技術解析の透析前後の coarse crackles 変化への臨床的応用」"
+      }
+    ],
+    "societies": [
+      {
+        "name": "日本麻酔科学会",
+        "since": "2024–"
+      },
+      {
+        "name": "日本疫学会",
+        "since": "2022–"
+      },
+      {
+        "name": "日本臨床疫学会",
+        "since": "2021–"
+      },
+      {
+        "name": "日本メディカルAI学会",
+        "since": "2021–"
+      },
+      {
+        "name": "日本行動計量学会",
+        "since": "2020–"
+      }
+    ]
+  },
+  "en": {
+    "pubYears": [
+      {
+        "year": "2026",
+        "items": [
+          {
+            "href": "https://doi.org/10.1007/s00134-026-08575-3",
+            "title": "Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a target trial emulation",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Ichinomiya, M. Nakajima, T. Shinozaki, J. Shibata, T. Goto, S. Sato, T. Hara",
+            "venue": "Intensive Care Medicine",
+            "first": true
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228",
+            "title": "The eGFR difference between creatinine-based and cystatin-C-based equations is also important in an Asian population within the J-CKD-DB-Ex",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", H. Nagasu, A. Hirano, M. Iwagami, T. Goto, N. Kashihara, M. Nangaku, Y. Hirakawa",
+            "venue": "Scientific Reports",
+            "first": true
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/52240508",
+            "title": "Prediction of estimated glomerular filtration rate slope and kidney prognosis of patients with chronic kidney disease",
+            "authorsPre": "H. Nagasu, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", K. Ihara, R. Fujimori, T. Goto, D. Nitta, S. Kishi, T. Sasaki, N. Kashihara",
+            "venue": "Scientific Reports",
+            "first": false,
+            "coFirst": true
+          }
+        ]
+      },
+      {
+        "year": "2025",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/51880036",
+            "title": "Proteinuria reduction as a surrogate endpoint for clinical study of IgA nephropathy in Japanese patients: data from the J-CKD-DB-Ex",
+            "authorsPre": "N. Kashihara, S. Itano, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto, K. Yoshihara, S. Eguchi, K. Iekushi, Y. Isaka, H. Nagasu",
+            "venue": "Clinical and Experimental Nephrology",
+            "first": false,
+            "coFirst": true
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/51027689",
+            "title": "A reappraisal of association between ventilator-associated events and mortality among critically ill patients using marginal structural model: multicenter observational study",
+            "authorsPre": "S. Nakahashi, K. Suzuki, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", Y. Hayashi, Y. Tanabe, A. Tanaka, S. Hashiuchi, C. Yamashita, Y. Ito, T. Wada, et al.",
+            "venue": "Intensive Care Medicine",
+            "first": false
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/49239661",
+            "title": "Phenotypes of Functional Decline or Recovery in Sepsis ICU Survivors: Insights From a 1-Year Follow-Up Multicenter Cohort Analysis",
+            "authorsPre": "K. Liu, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto, K. Nakamura, H. Nakano, M. Motoki, H. Kamijo, A. Matsuoka, K. Ishii, Y. Morita, et al.",
+            "venue": "Critical Care Medicine",
+            "first": false,
+            "coFirst": true
+          },
+          {
+            "href": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202502273103904762",
+            "title": "J-CKD-DB-Exを用いた慢性腎臓病患者のeGFR slope予測モデルの開発とwebアプリによるリスクの可視化",
+            "authorsPre": "長洲一, ",
+            "me": "中島誉也",
+            "authorsPost": ", 渭原克仁, 藤森遼, 後藤匡啓, 新田大介, 岸誠司, 佐々木環, 柏原直樹",
+            "venue": "日本腎臓学会誌 67(4)",
+            "first": false
+          }
+        ]
+      },
+      {
+        "year": "2024",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/48580003",
+            "title": "Estimating the Timeframe of Lactate Reduction in Acute Cardiovascular Disease Using Functional Data Analysis Based on Nonlinear Mixed Effects Models",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", S. Sato, H. Matsui, A. Mizuno",
+            "venue": "International Heart Journal 65(6)",
+            "first": true
+          },
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/45877886",
+            "title": "Association of serum magnesium levels with renal prognosis in patients with chronic kidney disease",
+            "authorsPre": "S. Kishi, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto, H. Nagasu, C. R. Brooks, H. Okada, K. Tamura, T. Nakano, I. Narita, S. Maruyama, et al.",
+            "venue": "Clinical and Experimental Nephrology",
+            "first": false,
+            "coFirst": true
+          }
+        ]
+      },
+      {
+        "year": "2023",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/43261512",
+            "title": "Clinical implications of urine output-based sepsis-associated acute kidney injury",
+            "authorsPre": "D. Kasugai, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto",
+            "venue": "Intensive Care Medicine",
+            "first": false
+          }
+        ]
+      },
+      {
+        "year": "2022",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/43860537",
+            "title": "新しい録音機器と解析技術を用いた肺音解析システムの医師聴診の補助ツールとしての可能性",
+            "authorsPre": "",
+            "me": "中島誉也",
+            "authorsPost": ", 尾長谷靖, 深堀範, 福島千鶴, 入来隼, 永江由香, 山口博之, 坂本憲穂, 石松祐二, 山田頼弥, et al.",
+            "venue": "長崎医学会雑誌 97(1)",
+            "first": true
+          }
+        ]
+      },
+      {
+        "year": "2021",
+        "items": [
+          {
+            "href": "https://researchmap.jp/nakataka8228/published_papers/40018542",
+            "title": "Association between preoperative toe perfusion index and maternal core temperature decrease during cesarean delivery under spinal anesthesia: a prospective cohort study",
+            "authorsPre": "S. Kaneko, K. Hara, S. Sato, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", Y. Kawazoe, M. Taguchi, S. Urabe, A. Nakao, K. Hamada, M. Yamaguchi, et al.",
+            "venue": "BMC Anesthesiology 21(1)",
+            "first": false
+          }
+        ]
+      }
+    ],
+    "writings": [
+      {
+        "date": "2026.06",
+        "title": "Generative AI in medical writing: a practical guide to accelerating study planning and literature review",
+        "meta": "Respiratory Therapy (Jpn Soc Respiratory Care Med) / Sole author",
+        "tag": "REVIEW"
+      },
+      {
+        "date": "2025.06",
+        "title": "Residents Note Vol.27 No.6: Gathering and using medical information",
+        "meta": "Yodosha / Chapter: Reading papers in the generative AI era",
+        "tag": "CHAPTER"
+      },
+      {
+        "date": "2025.03.19",
+        "title": "TRIPOD+AI Expanded Checklist: volunteer Japanese translation, version 1.1",
+        "meta": "Co-translators: Shuntaro Sato, Takaya Nakashima, Ryunosuke Goto, and Tadahiro Goto. Hosted on the TRIPOD website. Date of the Japanese version.",
+        "tag": "TRANSLATION",
+        "href": "https://www.tripod-statement.org/wp-content/uploads/2025/03/TRIPODAI_250319.pdf"
+      },
+      {
+        "date": "2024.12",
+        "title": "Report on the 29th Annual Meeting of the Japanese Society of Cardiovascular Anesthesiologists",
+        "meta": "Circulation Control 45(2): 130–131. Takaya Nakashima. Japan Society of Circulation Control in Medicine.",
+        "tag": "MEETING REPORT",
+        "href": "https://www.jsccm.org/files/upload/magazines/f08152d2fe64ba6b1aff0f4983292b21.pdf"
+      },
+      {
+        "date": "2024.09–2025.01",
+        "title": "Igakukai Shimbun Plus (series): Let the machines do the tedious work",
+        "meta": "Igaku-Shoin, Igakukai Shimbun Plus. Ten-part series.",
+        "tag": "SERIES",
+        "href": "https://www.igaku-shoin.co.jp/paperplus/series/00001"
+      },
+      {
+        "date": "2024.05",
+        "title": "Modern Epidemiology, 4th ed. (Japanese edition)",
+        "meta": "Gakujutsu Tosho / Co-translator, Ch.18 Stratification and Standardization",
+        "tag": "TRANSLATION"
+      },
+      {
+        "date": "2023.09",
+        "title": "AI-assisted literature search and management for busy residents",
+        "meta": "Shukan Igakukai Shimbun (Resident issue) No.3532",
+        "tag": "CONTRIBUTION"
+      }
+    ],
+    "notes": [
+      {
+        "date": "2025.06",
+        "tag": "GEN AI",
+        "title": "A complete guide to AI slides and conference posters — Genspark and Figma",
+        "href": "https://note.com/nakashima_takaya/n/n3b833d52cec4"
+      },
+      {
+        "date": "2024.06",
+        "tag": "RESEARCH DX",
+        "title": "Tips for busy researchers: literature search and reference management",
+        "href": "https://note.com/nakashima_takaya/n/nab5c8941cbc2"
+      },
+      {
+        "date": "2024.01",
+        "tag": "DATABASE",
+        "title": "The data revolution in the OR: a complete guide to MOVER",
+        "href": "https://note.com/nakashima_takaya/n/ne33aaf9f99a7"
+      }
+    ],
+    "talks": [
+      {
+        "date": "2026.10.13",
+        "title": "Benefits and challenges of generative AI assistance in statistical analysis practice",
+        "meta": "SAS User Meeting 2026, Day 0 session on statistical analysis in academia. Takaya Nakashima and Shuntaro Sato. 14:25–14:50, SAS Institute Japan headquarters. Tentative program.",
+        "tag": "SCHEDULED",
+        "upcoming": true,
+        "href": "https://sas-user2026.ywstat.jp/",
+        "plain": false,
+        "highlight": true
+      },
+      {
+        "date": "2026.09.19",
+        "title": "Clinical researchers in the AI era: working with generative AI",
+        "meta": "31st Annual Meeting, Japanese Society of Cardiovascular Anesthesiologists. Educational Lecture 2. On-demand only, September 19–November 25, 2026.",
+        "tag": "EDUCATIONAL LECTURE",
+        "href": "https://researchmap.jp/nakataka8228/presentations/55017048",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2026.09.05",
+        "title": "Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a retrospective observational target trial emulation using two ICU databases",
+        "meta": "64th Annual Meeting, Kyushu Society of Anesthesiologists. Q01-03, Kitakyushu International Conference Center.",
+        "tag": "BEST PRESENTATION",
+        "award": true,
+        "href": "https://www.micenavi.jp/jsashibu2026/search/detail_session/id:12160",
+        "plain": false,
+        "highlight": true
+      },
+      {
+        "date": "2025.07.24",
+        "title": "Using AI tools to write papers efficiently: tips for busy researchers",
+        "meta": "2025 Clinical Research Seminar, Clinical Research Center, Nagasaki University Hospital. Online.",
+        "tag": "SEMINAR LECTURER",
+        "href": "https://www.mh.nagasaki-u.ac.jp/research/news/data/2025/20250724_seminar2025.pdf",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2024.03",
+        "title": "Causative organism and outcome in bacteremia requiring intensive care: a retrospective cohort study",
+        "meta": "51st Annual Meeting, Japanese Society of Intensive Care Medicine",
+        "tag": "ORAL",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2023.09",
+        "title": "Predicting hemodynamic stabilization from lactate trajectories: functional data analysis with mixed effects models",
+        "meta": "Japanese Federation of Statistical Science Associations 2023",
+        "tag": "ORAL",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2023.02",
+        "title": "A prediction model for time to cardiovascular events in cardiac sarcoidosis",
+        "meta": "33rd Annual Meeting, Japan Epidemiological Association",
+        "tag": "ORAL",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2022.11",
+        "title": "Predicting recovery time in acute cardiovascular disease using functional data based on nonlinear mixed effects models",
+        "meta": "5th Annual Meeting, Japanese Society for Clinical Epidemiology",
+        "tag": "ORAL",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2021.10.22",
+        "title": "Clinical application of separation-technique analysis of recorded lung sounds to changes in coarse crackles before and after dialysis",
+        "meta": "87th Kyushu Branch Autumn Meeting, Japanese Respiratory Society and affiliated societies. Abstract 074, Kumamoto Castle Hall.",
+        "tag": "YOUNG INVESTIGATOR AWARD",
+        "award": true,
+        "href": "https://www.jrs.or.jp/meeting/kyushu/file/1022_87kyushu_program.pdf",
+        "plain": false,
+        "highlight": true
+      }
+    ],
+    "teaching": [
+      {
+        "date": "2026–",
+        "title": "Medical Statistics (School of Dentistry)",
+        "meta": "Nagasaki University",
+        "tag": "COURSE",
+        "href": "https://researchmap.jp/nakataka8228/teaching_experience/55017056"
+      },
+      {
+        "date": "ON-DEMAND",
+        "title": "AI-assisted research and paper writing for busy clinicians",
+        "meta": "Instructor, mJOHNSNOW (mMEDICI). Five sessions.",
+        "description": "Generative AI and digital tools for exploring research topics, searching and managing literature, statistical analysis, paper writing, and slide preparation.",
+        "tag": "ONLINE COURSE",
+        "href": "https://note.com/mmedici/n/n291ca1469544"
+      }
+    ],
+    "keywords": [
+      "Survival analysis",
+      "Functional data analysis",
+      "Machine learning",
+      "Longitudinal data",
+      "Sepsis",
+      "Lung sound analysis",
+      "Copula",
+      "Heterogeneity",
+      "Generative AI",
+      "Biostatistics",
+      "Causal inference",
+      "Target trial emulation",
+      "Mixed-effects models",
+      "Critical care medicine"
+    ],
+    "awards": [
+      {
+        "date": "2026.09",
+        "tag": "BEST PRESENTATION",
+        "title": "Best Presentation Award, 64th Annual Meeting of the Kyushu Society of Anesthesiologists",
+        "org": "Japanese Society of Anesthesiologists, Kyushu Branch",
+        "desc": "Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a retrospective observational target trial emulation using two ICU databases"
+      },
+      {
+        "date": "2021.10",
+        "tag": "AWARD",
+        "title": "Young Investigator Award (Clinical Research)",
+        "org": "87th Kyushu Branch Autumn Meeting, Japanese Respiratory Society and affiliated societies",
+        "desc": "Clinical application of separation-technique analysis of recorded lung sounds to coarse crackle changes before and after dialysis"
+      }
+    ],
+    "societies": [
+      {
+        "name": "Japanese Society of Anesthesiologists",
+        "since": "2024–"
+      },
+      {
+        "name": "Japan Epidemiological Association",
+        "since": "2022–"
+      },
+      {
+        "name": "Japanese Society for Clinical Epidemiology",
+        "since": "2021–"
+      },
+      {
+        "name": "Japanese Association for Medical AI",
+        "since": "2021–"
+      },
+      {
+        "name": "Behaviormetric Society of Japan",
+        "since": "2020–"
+      }
+    ]
+  }
+}

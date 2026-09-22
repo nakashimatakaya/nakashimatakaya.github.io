@@ -1,0 +1,68 @@
+{
+  "ja": {
+    "heroLead": "長崎大学病院の麻酔科医・生物統計家。診療データを用いた臨床研究と統計解析に取り組んでいます。",
+    "profileIntro": "長崎大学病院 麻酔集中治療部 医師・臨床研究センター 助手",
+    "profileBody": "臨床研究センターでは研究デザインと統計解析を担当しています。長崎大学大学院医歯薬学総合研究科の博士課程に在籍し、TXP Medicalとの共同研究にも参加しています。",
+    "researchIntro": "敗血症や周術期の診療データを中心に、治療の開始時期や患者ごとの経過を研究しています。",
+    "researchThemes": [
+      {
+        "title": "臨床疫学・因果推論",
+        "body": "多施設コホートや診療データベースを用いた観察研究。Target trial emulationや周辺構造モデルを用いて治療選択と転帰の関係を検討します。"
+      },
+      {
+        "title": "機械学習・予測モデル",
+        "body": "慢性腎臓病のeGFR slopeを中心に、診療データを用いた予測モデルを研究しています。"
+      },
+      {
+        "title": "経時的データ解析",
+        "body": "非線形混合効果モデルと関数データ解析を用い、乳酸値などの測定値が時間とともにどう変化するかを調べています。"
+      }
+    ],
+    "works": [
+      {
+        "title": "eGFR slope予測Webアプリ",
+        "body": "J-CKD-DB-Exを用いて慢性腎臓病患者のeGFR slopeと腎予後を予測。モデルの構築と予測結果の可視化を担当しました。"
+      },
+      {
+        "title": "肺音の分離・解析",
+        "body": "録音した肺音を分離・解析し、透析前後のcoarse cracklesの変化を調べました。日本呼吸器学会九州支部秋季学術講演会で育成賞（臨床研究部門）を受賞。"
+      }
+    ],
+    "teachingIntro": "長崎大学で医学統計学を担当しています。mJOHNSNOWでは全5回の講座で生成AIを使った研究と論文執筆を教えました。",
+    "writingIntro": "医学統計と臨床研究での生成AI活用について執筆しています。noteには文献検索やスライド作成の手順、周術期データベースの解説を掲載しています。",
+    "contactBody": "共同研究や統計解析、講演のご相談はメールでご連絡ください。"
+  },
+  "en": {
+    "heroLead": "Anesthesiologist and biostatistician at Nagasaki University Hospital. I conduct clinical research and statistical analyses using healthcare data.",
+    "profileIntro": "Physician, Department of Anesthesiology and Intensive Care Medicine; Research Associate, Clinical Research Center, Nagasaki University Hospital",
+    "profileBody": "I work on study design and statistical analysis at the Clinical Research Center. I am enrolled in the doctoral program at Nagasaki University Graduate School of Biomedical Sciences and collaborate with TXP Medical.",
+    "researchIntro": "My research examines treatment timing and patient trajectories, with a focus on sepsis and perioperative care.",
+    "researchThemes": [
+      {
+        "title": "Clinical epidemiology and causal inference",
+        "body": "Observational studies using multicenter cohorts and clinical databases. I study treatment choices and outcomes using target trial emulation and marginal structural models."
+      },
+      {
+        "title": "Machine learning and prediction models",
+        "body": "I develop prediction models using clinical data, with a focus on eGFR slope in chronic kidney disease."
+      },
+      {
+        "title": "Longitudinal data analysis",
+        "body": "I use nonlinear mixed-effects models and functional data analysis to study how measurements such as lactate levels change over time."
+      }
+    ],
+    "works": [
+      {
+        "title": "eGFR slope prediction app",
+        "body": "Prediction of eGFR slope and kidney outcomes in chronic kidney disease using J-CKD-DB-Ex. I worked on model development and web-based visualization of predictions."
+      },
+      {
+        "title": "Lung sound separation and analysis",
+        "body": "I separated and analyzed recorded lung sounds to examine changes in coarse crackles before and after dialysis. This work received the Young Investigator Award in Clinical Research at the Japanese Respiratory Society's Kyushu Branch Autumn Meeting."
+      }
+    ],
+    "teachingIntro": "I teach medical statistics at Nagasaki University. I also taught a five-session course on generative AI for research and paper writing at mJOHNSNOW.",
+    "writingIntro": "I write about medical statistics and the use of generative AI in clinical research. My articles on note cover literature searches, slide preparation, and perioperative databases.",
+    "contactBody": "Please email me about research collaboration, statistical analysis, or speaking invitations."
+  }
+}

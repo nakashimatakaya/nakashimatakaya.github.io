@@ -155,9 +155,10 @@
     runtime.markFetched(rootName);
     runtime.setRootName(rootName);
     runtime.adoptParsed(rootName, parsed);
-    fetch(location.href).then((res) => res.ok ? res.text() : "").then((t) => {
+    fetch(location.href, { cache: "no-store" }).then((res) => res.ok ? res.text() : "").then((t) => {
       const raw = t ? parseDcText(t) : null;
-      if (raw?.template) runtime.updateHtml(rootName, raw.template);
+      // Keep the template and logic from the same page version during deployment.
+      if (raw?.template && raw.js === parsed.js) runtime.updateHtml(rootName, raw.template);
     }).catch(() => {
     });
     const dc = doc.querySelector("x-dc");

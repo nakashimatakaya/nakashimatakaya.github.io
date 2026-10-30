@@ -42,8 +42,8 @@ for lang in ['ja','en']:
  earlier_talks=d['talks'][4:]
  earlier_talks_label=f'過去の学会発表を見る（{len(earlier_talks)}件）' if not en else f'Earlier presentations ({len(earlier_talks)})'
  nav=[('profile','Profile' if en else 'プロフィール'),('research','Research' if en else '研究・論文'),('writing','Writing' if en else '執筆・発信'),('talks','Talks' if en else '講演'),('teaching','Teaching' if en else '教育')]
- title='Takaya Nakashima, M.D. | Clinical epidemiology and biostatistics' if en else '中島誉也 | 臨床と統計の橋渡しを。'
- hero='Clinical<br>epidemiology<br>in <em>critical care.</em>' if en else '臨床と統計の<br><em>橋渡し</em>を。'
+ title='Takaya Nakashima, M.D. | Anesthesiology, critical care and biostatistics' if en else '中島誉也 | 臨床と統計の橋渡しを。'
+ hero='Anesthesia,<br>critical care<br>&amp; <em>research.</em>' if en else '臨床と統計の<br><em>橋渡し</em>を。'
  hreflang='/en/' if en else '/'
  switch='<a href="../" lang="ja">日本語</a><span aria-current="page">EN</span>' if en else '<span aria-current="page">JA</span><a href="./en/" lang="en">EN</a>'
  news=d['news']
@@ -137,7 +137,7 @@ for lang in ['ja','en']:
  {section_head('05','TEACHING','担当授業・講座' if not en else 'Teaching',cp['teachingIntro'])}
  <ol class="record-list teaching-list">{''.join(record(x,lang,'teaching') for x in d['teaching'])}</ol>
 </section>
-<section class="contact-section" id="contact"><div class="container contact-grid"><div><p class="eyebrow">CONTACT</p><h2>{'研究や仕事の<br>ご相談について' if not en else 'Research<br>collaboration'}</h2><p>{esc(cp['contactBody'])}</p></div><div class="contact-links"><a class="email" href="mailto:takaya.nakashima@nagasaki-u.ac.jp">takaya.nakashima<span>@nagasaki-u.ac.jp</span><i aria-hidden="true">↗</i></a><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link('https://x.com/naka_takaya','X')}{link('https://note.com/nakashima_takaya','note')}</div></div></div></section>
+<section class="contact-section" id="contact"><div class="container contact-grid"><div><p class="eyebrow">CONTACT</p><h2>{'研究や仕事の<br>ご相談について' if not en else 'Get in touch'}</h2><p>{esc(cp['contactBody'])}</p></div><div class="contact-links"><a class="email" href="mailto:takaya.nakashima@nagasaki-u.ac.jp">takaya.nakashima<span>@nagasaki-u.ac.jp</span><i aria-hidden="true">↗</i></a><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link('https://x.com/naka_takaya','X')}{link('https://note.com/nakashima_takaya','note')}</div></div></div></section>
 </main>
 <footer class="container site-footer"><a class="footer-name" href="#top">TAKAYA NAKASHIMA</a><p>© 2026 Takaya Nakashima</p><a href="#top">{'ページ上部へ' if not en else 'Back to top'} ↑</a></footer>
 </body>

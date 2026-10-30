@@ -34,7 +34,7 @@
     "profileResearch": "敗血症性ショックにおけるバソプレシンの開始時期を検討した筆頭著者論文が、2026年にIntensive Care Medicineに掲載されました。"
   },
   "en": {
-    "heroLead": "I am an anesthesiologist and biostatistician at Nagasaki University Hospital. I study treatment timing and patient trajectories in sepsis and perioperative care using clinical databases.",
+    "heroLead": "I am an anesthesiologist and biostatistician at Nagasaki University Hospital. I practice anesthesiology and study treatment timing and patient trajectories in sepsis and perioperative care.",
     "profileIntro": "Physician, Department of Anesthesiology and Intensive Care Medicine; Research Associate, Clinical Research Center, Nagasaki University Hospital",
     "profileBody": "I work on study design and statistical analysis at the Clinical Research Center. I am enrolled in the doctoral program at Nagasaki University Graduate School of Biomedical Sciences and collaborate with TXP Medical.",
     "researchIntro": "I study when to start treatment and how patients change over time. My work uses intensive care and perioperative cohorts, with related research in chronic kidney disease.",
@@ -64,7 +64,7 @@
     ],
     "teachingIntro": "I teach medical statistics at Nagasaki University. I also taught a five-session course on generative AI for research and paper writing at mJOHNSNOW.",
     "writingIntro": "I write about medical statistics and the use of generative AI in clinical research. My articles on note cover literature searches, slide preparation, and perioperative databases.",
-    "contactBody": "I welcome discussions about collaborative research in critical care, clinical epidemiology, and biostatistics. Please email me with a research question or project outline. My current CV is available above.",
+    "contactBody": "I welcome conversations with clinicians and researchers in anesthesiology, critical care, and clinical epidemiology. Please email me about academic exchange, research collaboration, or teaching.",
     "profileResearch": "My first-author research includes a target trial emulation of vasopressin initiation in septic shock, published in Intensive Care Medicine in 2026."
   }
 }

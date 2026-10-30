@@ -1,0 +1,68 @@
+{
+  "en": {
+    "intro": "Selected studies cover treatment timing, ICU registry research, and longitudinal methods. Each entry links to the original paper.",
+    "items": [
+      {
+        "title": "Vasopressin initiation in septic shock",
+        "journal": "Intensive Care Medicine",
+        "year": "2026",
+        "role": "First and corresponding author",
+        "body": "We compared ultra-early and early adjunctive vasopressin initiation after norepinephrine escalation using MIMIC-IV and eICU-CRD. We used target trial emulation with the clone-censor-weight method to compare the treatment strategies.",
+        "methods": "Target trial emulation · Clone-censor-weight · ICU databases",
+        "href": "https://doi.org/10.1007/s00134-026-08575-3",
+        "code": "https://github.com/nakashimatakaya/vasopressin-timing-target-trial-emulation"
+      },
+      {
+        "title": "Anaphylactic shock in Japanese ICUs",
+        "journal": "Journal of Anesthesia, Analgesia and Critical Care",
+        "year": "2026",
+        "role": "First and corresponding author",
+        "body": "Using JIPAD, we described the clinical characteristics, management, and outcomes of 643 adult ICU admissions with registry-identified anaphylactic shock. The study covers fiscal years 2015–2023 at participating Japanese ICUs.",
+        "methods": "Multicenter registry · Descriptive epidemiology · JIPAD",
+        "href": "https://doi.org/10.1186/s44158-026-00464-x"
+      },
+      {
+        "title": "Lactate trajectories in acute cardiovascular disease",
+        "journal": "International Heart Journal",
+        "year": "2024",
+        "role": "First author",
+        "body": "We used functional data analysis based on nonlinear mixed-effects models to estimate the timeframe of lactate reduction in adults with acute cardiovascular disease.",
+        "methods": "Functional data analysis · Nonlinear mixed-effects models",
+        "href": "https://doi.org/10.1536/ihj.23-659"
+      }
+    ]
+  },
+  "ja": {
+    "intro": "治療の開始時期、ICU登録症例の記述研究、経時データ解析を扱った代表研究です。各研究から原著論文を参照できます。",
+    "items": [
+      {
+        "title": "敗血症性ショックにおけるバソプレシンの開始時期",
+        "journal": "Intensive Care Medicine",
+        "year": "2026",
+        "role": "筆頭・責任著者",
+        "body": "MIMIC-IVとeICU-CRDを用い、ノルアドレナリン増量後のバソプレシン超早期併用と早期併用を比較しました。Target trial emulationとclone-censor-weight法で治療開始戦略を検討した研究です。",
+        "methods": "Target trial emulation · Clone-censor-weight · ICUデータベース",
+        "href": "https://doi.org/10.1007/s00134-026-08575-3",
+        "code": "https://github.com/nakashimatakaya/vasopressin-timing-target-trial-emulation"
+      },
+      {
+        "title": "日本のICUにおけるアナフィラキシーショック",
+        "journal": "Journal of Anesthesia, Analgesia and Critical Care",
+        "year": "2026",
+        "role": "筆頭・責任著者",
+        "body": "JIPADでアナフィラキシーショックと登録された成人のICU入室643件について、臨床像、診療内容、転帰を記述しました。対象は2015〜2023年度の参加施設の登録症例です。",
+        "methods": "多施設レジストリ · 記述疫学 · JIPAD",
+        "href": "https://doi.org/10.1186/s44158-026-00464-x"
+      },
+      {
+        "title": "急性心血管疾患における乳酸値の経時変化",
+        "journal": "International Heart Journal",
+        "year": "2024",
+        "role": "筆頭著者",
+        "body": "急性心血管疾患の成人を対象に、非線形混合効果モデルに基づく関数データ解析を用い、乳酸値が低下するまでの時間を推定しました。",
+        "methods": "関数データ解析 · 非線形混合効果モデル",
+        "href": "https://doi.org/10.1536/ihj.23-659"
+      }
+    ]
+  }
+}

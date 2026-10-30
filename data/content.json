@@ -11,7 +11,8 @@
             "me": "T. Nakashima",
             "authorsPost": ", M. Sekino, H. Araki, T. Ichinomiya, T. Hara",
             "venue": "Journal of Anesthesia, Analgesia and Critical Care",
-            "first": true
+            "first": true,
+            "corresponding": true
           },
           {
             "href": "https://doi.org/10.1007/s00134-026-08575-3",
@@ -20,7 +21,8 @@
             "me": "T. Nakashima",
             "authorsPost": ", T. Ichinomiya, M. Nakajima, T. Shinozaki, J. Shibata, T. Goto, S. Sato, T. Hara",
             "venue": "Intensive Care Medicine",
-            "first": true
+            "first": true,
+            "corresponding": true
           },
           {
             "href": "https://researchmap.jp/nakataka8228",
@@ -82,7 +84,8 @@
             "me": "中島誉也",
             "authorsPost": ", 渭原克仁, 藤森遼, 後藤匡啓, 新田大介, 岸誠司, 佐々木環, 柏原直樹",
             "venue": "日本腎臓学会誌 67(4)",
-            "first": false
+            "first": false,
+            "type": "conference_abstract"
           }
         ]
       },
@@ -90,7 +93,7 @@
         "year": "2024",
         "items": [
           {
-            "href": "https://researchmap.jp/nakataka8228/published_papers/48580003",
+            "href": "https://doi.org/10.1536/ihj.23-659",
             "title": "Estimating the Timeframe of Lactate Reduction in Acute Cardiovascular Disease Using Functional Data Analysis Based on Nonlinear Mixed Effects Models",
             "authorsPre": "",
             "me": "T. Nakashima",
@@ -400,7 +403,8 @@
             "me": "T. Nakashima",
             "authorsPost": ", M. Sekino, H. Araki, T. Ichinomiya, T. Hara",
             "venue": "Journal of Anesthesia, Analgesia and Critical Care",
-            "first": true
+            "first": true,
+            "corresponding": true
           },
           {
             "href": "https://doi.org/10.1007/s00134-026-08575-3",
@@ -409,7 +413,8 @@
             "me": "T. Nakashima",
             "authorsPost": ", T. Ichinomiya, M. Nakajima, T. Shinozaki, J. Shibata, T. Goto, S. Sato, T. Hara",
             "venue": "Intensive Care Medicine",
-            "first": true
+            "first": true,
+            "corresponding": true
           },
           {
             "href": "https://researchmap.jp/nakataka8228",
@@ -471,7 +476,8 @@
             "me": "中島誉也",
             "authorsPost": ", 渭原克仁, 藤森遼, 後藤匡啓, 新田大介, 岸誠司, 佐々木環, 柏原直樹",
             "venue": "日本腎臓学会誌 67(4)",
-            "first": false
+            "first": false,
+            "type": "conference_abstract"
           }
         ]
       },
@@ -479,7 +485,7 @@
         "year": "2024",
         "items": [
           {
-            "href": "https://researchmap.jp/nakataka8228/published_papers/48580003",
+            "href": "https://doi.org/10.1536/ihj.23-659",
             "title": "Estimating the Timeframe of Lactate Reduction in Acute Cardiovascular Disease Using Functional Data Analysis Based on Nonlinear Mixed Effects Models",
             "authorsPre": "",
             "me": "T. Nakashima",

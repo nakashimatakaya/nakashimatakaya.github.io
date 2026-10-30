@@ -1,0 +1,135 @@
+{
+  "updated": "October 30, 2026",
+  "source_note": "Career and degree dates were retained from the previously published CV dated August 29, 2026. Current publication, teaching, writing, award and presentation entries come from data/content.json. Bibliographic details were retained from that CV or checked in the October 30, 2026 publisher and PubMed evidence. English titles of Japanese-language outputs are translations for this CV.",
+  "positions": [
+    [
+      "April 2026 - present",
+      "Research Associate",
+      "Clinical Research Center, Nagasaki University Hospital"
+    ],
+    [
+      "April 2024 - present",
+      "Physician",
+      "Department of Anesthesiology and Intensive Care Medicine, Nagasaki University Hospital"
+    ],
+    [
+      "April 2022 - March 2024",
+      "Junior Resident",
+      "Nagasaki University Hospital"
+    ],
+    [
+      "Current",
+      "Collaborative Researcher",
+      "TXP Medical Co. Ltd."
+    ]
+  ],
+  "education": [
+    [
+      "April 2022 - present",
+      "Doctoral program in Anesthesiology and Intensive Care Medicine",
+      "Graduate School of Biomedical Sciences, Nagasaki University. Degree in progress."
+    ],
+    [
+      "April 2016 - March 2022",
+      "M.D., School of Medicine",
+      "Nagasaki University"
+    ]
+  ],
+  "methods": "Target trial emulation; clone-censor-weight estimation; marginal structural models; survival analysis; nonlinear mixed-effects models; functional data analysis; clinical prediction and machine learning. Software: R and Python.",
+  "research_profile": "I study treatment timing and patient trajectories in sepsis and perioperative care. My work uses clinical databases and multicenter registries, including MIMIC-IV, eICU-CRD, JIPAD and J-CKD-DB-Ex. I work on study design and statistical analysis at the Clinical Research Center, Nagasaki University Hospital.",
+  "credential": "Japan Statistical Society Certificate, Grade Pre-1",
+  "publication_metadata": {
+    "https://doi.org/10.1186/s44158-026-00464-x": {
+      "details": "Published online October 30, 2026",
+      "doi": "10.1186/s44158-026-00464-x",
+      "corresponding": true
+    },
+    "https://doi.org/10.1007/s00134-026-08575-3": {
+      "details": "2026;52(10):2085-2095",
+      "doi": "10.1007/s00134-026-08575-3",
+      "corresponding": true,
+      "code_url": "https://github.com/nakashimatakaya/vasopressin-timing-target-trial-emulation"
+    },
+    "https://researchmap.jp/nakataka8228": {
+      "details": "2026;16:26286",
+      "doi": "10.1038/s41598-026-57444-y"
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/52240508": {
+      "details": "2026;16:8883",
+      "doi": "10.1038/s41598-026-38246-8"
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/51880036": {
+      "details": "2026;30(2):309-319. Published online 2025",
+      "doi": "10.1007/s10157-025-02788-4",
+      "author_suffix": "; J-CKD-DB collaborators"
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/51027689": {
+      "details": "2025;51(10):1764-1774",
+      "doi": "10.1007/s00134-025-08074-x"
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/49239661": {
+      "details": "2025;53(4):e928-e940",
+      "doi": "10.1097/CCM.0000000000006621"
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/48580003": {
+      "details": "2024;65(6):1058-1065",
+      "venue": "International Heart Journal",
+      "doi": "10.1536/ihj.23-659"
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/45877886": {
+      "details": "2024;28(8):784-792",
+      "doi": "10.1007/s10157-024-02486-7"
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/43261512": {
+      "details": "2023;49(10):1263-1265",
+      "doi": "10.1007/s00134-023-07190-w"
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/43860537": {
+      "details": "2022;97(1):1-6. In Japanese",
+      "title": "Potential of a lung sound analysis system using a new recording device and signal separation as an aid to physician auscultation",
+      "venue": "Nagasaki Medical Journal",
+      "authors": "Nakashima T, Onagase Y, Fukahori S, Fukushima C, Iriki H, Nagae Y, Yamaguchi H, Sakamoto N, Ishimatsu Y, Yamada R, et al."
+    },
+    "https://researchmap.jp/nakataka8228/published_papers/40018542": {
+      "details": "2021;21:250",
+      "venue": "BMC Anesthesiology",
+      "doi": "10.1186/s12871-021-01470-y",
+      "authors": "Kaneko S, Hara K, Sato S, Nakashima T, Kawazoe Y, Taguchi M, Urabe S, Nakao A, Hamada K, Yamaguchi M, Hara T"
+    }
+  },
+  "conference_abstract": {
+    "date": "June 2025",
+    "title": "Development of an eGFR slope prediction model using J-CKD-DB-Ex and visualization of risk with a web application",
+    "authors": "Nagasu H, Nakashima T, Ihara K, Fujimori R, Goto T, Nitta D, Kishi S, Sasaki T, Kashihara N",
+    "venue": "Japanese Journal of Nephrology. 2025;67(4):484. In Japanese.",
+    "href": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202502273103904762"
+  },
+  "research_outputs": [
+    {
+      "title": "eGFR slope prediction web application",
+      "body": "Prediction and visualization of eGFR slope and kidney outcomes using J-CKD-DB-Ex data. Hosted by the Japan Kidney Association.",
+      "href": "https://app.j-ka.or.jp/#/dashboard",
+      "label": "Prediction application"
+    },
+    {
+      "title": "Lung sound separation and analysis",
+      "body": "Recorded lung sounds were separated and analyzed to examine changes in coarse crackles before and after dialysis. Related publication listed above.",
+      "href": "https://researchmap.jp/nakataka8228/published_papers/43860537",
+      "label": "Publication record"
+    }
+  ],
+  "talk_metadata": {
+    "2026.10.13": "SAS User Meeting 2026, Day 0 session on statistical analysis in academia. With Shuntaro Sato. Listed in the conference program.",
+    "2026.10.07": "Invited lecture, Kochi Medical Revitalization Organization rheumatology specialist training program, Kochi University.",
+    "2026.09.19": "Educational Lecture 2, 31st Annual Meeting, Japanese Society of Cardiovascular Anesthesiologists. On-demand, September 19 - November 25, 2026.",
+    "2026.09.05": "64th Annual Meeting, Kyushu Society of Anesthesiologists. Best Presentation Award.",
+    "2025.07.24": "Clinical Research Seminar, Clinical Research Center, Nagasaki University Hospital. Online."
+  },
+  "membership_dates": [
+    "April 2024 - present",
+    "September 2022 - present",
+    "September 2021 - present",
+    "June 2021 - present",
+    "November 2020 - present"
+  ]
+}

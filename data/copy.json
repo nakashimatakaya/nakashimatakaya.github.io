@@ -7,7 +7,7 @@
     "researchThemes": [
       {
         "title": "臨床疫学・因果推論",
-        "body": "多施設コホートや診療データベースを用いた観察研究。Target trial emulationや周辺構造モデルを用いて治療選択と転帰の関係を検討します。"
+        "body": "Target trial emulation、clone-censor-weight法、周辺構造モデルを用い、多施設コホートや診療データベースから治療戦略と転帰の関係を検討します。"
       },
       {
         "title": "機械学習・予測モデル",
@@ -30,17 +30,18 @@
     ],
     "teachingIntro": "長崎大学で医学統計学を担当しています。mJOHNSNOWでは全5回の講座で生成AIを使った研究と論文執筆を教えました。",
     "writingIntro": "医学統計と臨床研究での生成AI活用について執筆しています。noteには文献検索やスライド作成の手順、周術期データベースの解説を掲載しています。",
-    "contactBody": "共同研究や統計解析、講演のご相談はメールでご連絡ください。"
+    "contactBody": "集中治療、臨床疫学、生物統計学に関する共同研究のご相談を受け付けています。研究の問いや計画の概要を添えてメールでご連絡ください。統計解析や講演のご相談もこちらへどうぞ。",
+    "profileResearch": "敗血症性ショックにおけるバソプレシンの開始時期を検討した筆頭著者論文が、2026年にIntensive Care Medicineに掲載されました。"
   },
   "en": {
-    "heroLead": "Anesthesiologist and biostatistician at Nagasaki University Hospital. I conduct clinical research and statistical analyses using healthcare data.",
+    "heroLead": "I am an anesthesiologist and biostatistician at Nagasaki University Hospital. I study treatment timing and patient trajectories in sepsis and perioperative care using clinical databases.",
     "profileIntro": "Physician, Department of Anesthesiology and Intensive Care Medicine; Research Associate, Clinical Research Center, Nagasaki University Hospital",
     "profileBody": "I work on study design and statistical analysis at the Clinical Research Center. I am enrolled in the doctoral program at Nagasaki University Graduate School of Biomedical Sciences and collaborate with TXP Medical.",
-    "researchIntro": "My research examines treatment timing and patient trajectories, with a focus on sepsis and perioperative care.",
+    "researchIntro": "I study when to start treatment and how patients change over time. My work uses intensive care and perioperative cohorts, with related research in chronic kidney disease.",
     "researchThemes": [
       {
         "title": "Clinical epidemiology and causal inference",
-        "body": "Observational studies using multicenter cohorts and clinical databases. I study treatment choices and outcomes using target trial emulation and marginal structural models."
+        "body": "I use target trial emulation, the clone-censor-weight method, and marginal structural models to study treatment strategies using observational data."
       },
       {
         "title": "Machine learning and prediction models",
@@ -63,6 +64,7 @@
     ],
     "teachingIntro": "I teach medical statistics at Nagasaki University. I also taught a five-session course on generative AI for research and paper writing at mJOHNSNOW.",
     "writingIntro": "I write about medical statistics and the use of generative AI in clinical research. My articles on note cover literature searches, slide preparation, and perioperative databases.",
-    "contactBody": "Please email me about research collaboration, statistical analysis, or speaking invitations."
+    "contactBody": "I welcome discussions about collaborative research in critical care, clinical epidemiology, and biostatistics. Please email me with a research question or project outline. My current CV is available above.",
+    "profileResearch": "My first-author research includes a target trial emulation of vasopressin initiation in septic shock, published in Intensive Care Medicine in 2026."
   }
 }

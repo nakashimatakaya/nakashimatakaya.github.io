@@ -3,6 +3,7 @@ import json, html
 ROOT=Path(__file__).resolve().parent.parent
 D=json.loads((ROOT/'data/content.json').read_text())
 C=json.loads((ROOT/'data/copy.json').read_text())
+R=json.loads((ROOT/'data/research.json').read_text())
 LINKEDIN='https://www.linkedin.com/in/%E8%AA%89%E4%B9%9F-%E4%B8%AD%E5%B3%B6-a26263443/'
 esc=lambda s:html.escape(str(s),quote=True)
 def link(url,label,cls='text-link'):
@@ -18,8 +19,16 @@ def record(x,lang,kind='talk'):
  return f'<li class="record {"upcoming" if x.get("upcoming") else ""}"><div class="record-date"><span>{date}</span><small>{tag}</small></div><div class="record-body"><h3>{title}</h3><p class="record-meta">{meta}</p>{desc}</div></li>'
 def paper(p,year,lang):
  role=('筆頭著者' if lang=='ja' else 'First author') if p.get('first') else ('共同筆頭著者' if lang=='ja' else 'Co-first author') if p.get('coFirst') else ''
+ if p.get('corresponding'):
+  role=('筆頭・責任著者' if lang=='ja' else 'First and corresponding author') if p.get('first') else ('責任著者' if lang=='ja' else 'Corresponding author')
+ if p.get('type')=='conference_abstract':
+  role='学会抄録' if lang=='ja' else 'Conference abstract'
  authors=esc(p['authorsPre'])+f'<strong>{esc(p["me"])}</strong>'+esc(p['authorsPost'])
  return f'<li class="paper"><div class="paper-meta"><span>{year}</span><span>{esc(p["venue"])}</span>{f"<span>{role}</span>" if role else ""}</div><h3><a href="{esc(p["href"])}" target="_blank" rel="noopener noreferrer">{esc(p["title"])}<span class="record-arrow" aria-hidden="true">↗</span></a></h3><p class="authors">{authors}</p></li>'
+def selected_study(x,lang):
+ label='原著論文' if lang=='ja' else 'Read the paper'
+ code_link=link(x['code'],'解析コード' if lang=='ja' else 'Analysis code') if x.get('code') else ''
+ return f'<article class="selected-study"><div class="study-citation"><p>{esc(x["journal"])}</p><span>{esc(x["year"])} · {esc(x["role"])}</span></div><div class="study-summary"><h4>{esc(x["title"])}</h4><p>{esc(x["body"])}</p><p class="study-methods">{esc(x["methods"])}</p><div class="study-links">{link(x["href"],label)}{code_link}</div></div></article>'
 for lang in ['ja','en']:
  en=lang=='en';d=D[lang];cp=C[lang];base='../' if en else './'
  writings=d['writings']
@@ -29,12 +38,12 @@ for lang in ['ja','en']:
  earlier_papers=[(y,p) for y,p in papers if y!=latest_year]
  earlier_years=sorted({y for y,p in earlier_papers})
  earlier_span=f'{earlier_years[0]}–{earlier_years[-1]}' if earlier_years else ''
- earlier_label=f'{earlier_span}年の論文を見る（{len(earlier_papers)}件）' if not en else f'Earlier publications, {earlier_span} ({len(earlier_papers)})'
+ earlier_label=f'{earlier_span}年の論文・抄録を見る（{len(earlier_papers)}件）' if not en else f'Earlier publications, {earlier_span} ({len(earlier_papers)})'
  earlier_talks=d['talks'][4:]
  earlier_talks_label=f'過去の学会発表を見る（{len(earlier_talks)}件）' if not en else f'Earlier presentations ({len(earlier_talks)})'
  nav=[('profile','Profile' if en else 'プロフィール'),('research','Research' if en else '研究・論文'),('writing','Writing' if en else '執筆・発信'),('talks','Talks' if en else '講演'),('teaching','Teaching' if en else '教育')]
- title='Takaya Nakashima | Clinical care and statistics' if en else '中島誉也 | 臨床と統計の橋渡しを。'
- hero='Bridging<br>clinical care<br>and <em>statistics.</em>' if en else '臨床と統計の<br><em>橋渡し</em>を。'
+ title='Takaya Nakashima, M.D. | Clinical epidemiology and biostatistics' if en else '中島誉也 | 臨床と統計の橋渡しを。'
+ hero='Clinical<br>epidemiology<br>in <em>critical care.</em>' if en else '臨床と統計の<br><em>橋渡し</em>を。'
  hreflang='/en/' if en else '/'
  switch='<a href="../" lang="ja">日本語</a><span aria-current="page">EN</span>' if en else '<span aria-current="page">JA</span><a href="./en/" lang="en">EN</a>'
  news=d['news']
@@ -48,7 +57,7 @@ for lang in ['ja','en']:
  works=''.join(f'<article><span class="eyebrow">{"WEB APPLICATION" if i==0 else "RESEARCH TOOL"}</span><h3>{esc(x["title"])}</h3><p>{esc(x["body"])}</p>{link(worklinks[i],"詳細を見る" if not en else "View project")}</article>' for i,x in enumerate(cp['works']))
  keywords=''.join(f'<li>{esc(x)}</li>' for x in d['keywords'])
  notes=''.join(f'<li><a href="{esc(x["href"])}" target="_blank" rel="noopener noreferrer"><span class="note-date">{esc(x["date"])}</span><h3>{esc(x["title"].replace(" — ","：" if not en else ": "))}</h3><span aria-hidden="true">↗</span></a></li>' for x in d['notes'])
- heading_papers='論文' if not en else 'Publications'
+ heading_papers='論文・抄録' if not en else 'Publications'
  html_doc=f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -60,6 +69,7 @@ for lang in ['ja','en']:
 <link rel="canonical" href="https://nakashimatakaya.github.io{hreflang}">
 <link rel="alternate" hreflang="ja" href="https://nakashimatakaya.github.io/">
 <link rel="alternate" hreflang="en" href="https://nakashimatakaya.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://nakashimatakaya.github.io/en/">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(cp['heroLead'])}">
 <meta property="og:type" content="profile">
@@ -70,7 +80,7 @@ for lang in ['ja','en']:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{base}style.css?v=20260922e">
+<link rel="stylesheet" href="{base}style.css?v=20261030a">
 <script defer src="{base}site.js?v=20260922e"></script>
 <script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'Person','name':'中島誉也','alternateName':'Takaya Nakashima','jobTitle':'Anesthesiologist and Biostatistician','url':'https://nakashimatakaya.github.io/','image':'https://nakashimatakaya.github.io/portrait.jpg','worksFor':{'@type':'Organization','name':'Nagasaki University Hospital'},'sameAs':['https://researchmap.jp/nakataka8228',LINKEDIN,'https://orcid.org/0009-0001-4214-3945','https://github.com/nakashimatakaya']},ensure_ascii=False)}</script>
 </head>
@@ -92,20 +102,22 @@ for lang in ['ja','en']:
    <h1>{hero}</h1>
    <p class="hero-name">{author}<span>{'麻酔科医・生物統計家' if not en else 'M.D. / Anesthesiologist & Biostatistician'}</span></p>
    <p class="hero-lead">{esc(cp['heroLead'])}</p>
-   <div class="hero-links"><a class="button" href="#research">{'研究・論文を見る' if not en else 'Explore my research'}<span aria-hidden="true">↗</span></a><a class="quiet-link" href="#profile">{'プロフィール' if not en else 'About me'}<span aria-hidden="true">↓</span></a></div>
+   <div class="hero-links"><a class="button" href="#selected-research">{'代表研究を見る' if not en else 'Selected research'}<span aria-hidden="true">↓</span></a><a class="quiet-link" href="{base}Takaya_Nakashima_CV.pdf" target="_blank" rel="noopener noreferrer">{'英文CV（PDF）' if not en else 'Academic CV (PDF)'}<span aria-hidden="true">↗</span></a></div>
   </div>
   <figure class="hero-photo"><img src="{base}portrait.jpg" alt="{'中島誉也のポートレート' if not en else 'Portrait of Takaya Nakashima'}" width="1968" height="1968" fetchpriority="high"><figcaption>NAGASAKI, JAPAN</figcaption></figure>
  </div>
- <div class="hero-bottom container"><p>CLINICAL CARE<br>AND RESEARCH</p><dl><div><dt>{'論文' if not en else 'Publications'}</dt><dd>{len(papers)}</dd></div><div><dt>{'執筆・翻訳' if not en else 'Writing & translation'}</dt><dd>{len(writings)}</dd></div><div><dt>{'講演・学会発表' if not en else 'Talks & presentations'}</dt><dd>{len(d['talks'])}</dd></div><div><dt>{'受賞' if not en else 'Awards'}</dt><dd>{len(d['awards'])}</dd></div></dl><a href="#profile" class="scroll-cue">SCROLL <span>↓</span></a></div>
+ <div class="hero-bottom container"><p>CLINICAL CARE<br>AND RESEARCH</p><dl><div><dt>{'論文・抄録' if not en else 'Publications'}</dt><dd>{len(papers)}</dd></div><div><dt>{'執筆・翻訳' if not en else 'Writing & translation'}</dt><dd>{len(writings)}</dd></div><div><dt>{'講演・学会発表' if not en else 'Talks & presentations'}</dt><dd>{len(d['talks'])}</dd></div><div><dt>{'受賞' if not en else 'Awards'}</dt><dd>{len(d['awards'])}</dd></div></dl><a href="#profile" class="scroll-cue">SCROLL <span>↓</span></a></div>
 </section>
 <aside class="news"><div class="container"><span class="eyebrow">{esc(news['label'])}</span><span class="news-date">{esc(news['date'])}</span><a href="{esc(news['href'])}" target="_blank" rel="noopener noreferrer">{esc(news['title'])}<span aria-hidden="true">↗</span></a></div></aside>
 <section class="section container" id="profile">
  {section_head('01','PROFILE','プロフィール' if not en else 'About me')}
- <div class="profile-grid"><div class="profile-copy"><h3>{author}<span>{'Takaya Nakashima, M.D.' if not en else 'Nagasaki University Hospital'}</span></h3><p>{esc(cp['profileIntro'])}</p><p>{esc(cp['profileBody'])}</p><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link('https://orcid.org/0009-0001-4214-3945','ORCID')}<a class="text-link" href="{base}Takaya_Nakashima_CV.pdf" target="_blank">CV (PDF)<span>↗</span></a></div></div><dl class="profile-facts">{meta}</dl></div>
+ <div class="profile-grid"><div class="profile-copy"><h3>{author}<span>{'Takaya Nakashima, M.D.' if not en else 'Nagasaki University Hospital'}</span></h3><p>{esc(cp['profileIntro'])}</p><p>{esc(cp['profileBody'])}</p><p>{esc(cp['profileResearch'])}</p><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link('https://orcid.org/0009-0001-4214-3945','ORCID')}<a class="text-link" href="{base}Takaya_Nakashima_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)<span aria-hidden="true">↗</span></a></div><p class="cv-updated">{'英文CV更新日：2026年10月30日' if not en else 'Academic CV updated 30 October 2026'}</p></div><dl class="profile-facts">{meta}</dl></div>
  <details class="disclosure profile-details" id="awards"><summary><span>{'受賞・所属学会' if not en else 'Awards & memberships'}</span><span aria-hidden="true" class="plus"></span></summary><div class="award-grid"><ol class="award-list">{awards}</ol><div><h3>{'所属学会' if not en else 'Memberships'}</h3><ul class="society-list">{societies}</ul></div></div></details>
 </section>
 <section class="section research-section" id="research"><div class="container">
  {section_head('02','RESEARCH','研究と論文' if not en else 'Research & publications',cp['researchIntro'])}
+ <div class="selected-research" id="selected-research"><div class="subsection-head"><h3>{'代表研究' if not en else 'Selected research'}</h3><a class="quiet-link" href="#papers">{'全業績へ' if not en else 'All publications'}<span aria-hidden="true">↓</span></a></div><p class="selected-intro">{esc(R[lang]['intro'])}</p>{''.join(selected_study(x,lang) for x in R[lang]['items'])}</div>
+ <div class="subsection-head methods-heading"><h3>{'研究領域と解析方法' if not en else 'Research focus & methods'}</h3></div>
  <div class="research-themes">{themes}</div>
  <div class="keyword-area"><h3>RESEARCH KEYWORDS</h3><ul>{keywords}</ul></div>
  <div class="publications" id="papers"><div class="subsection-head"><h3>{heading_papers}</h3><span>{len(papers)} PUBLICATIONS</span></div><ol class="paper-list">{''.join(paper(p,y,lang) for y,p in latest_papers)}</ol><details class="disclosure"><summary><span>{esc(earlier_label)}</span><span class="plus" aria-hidden="true"></span></summary><ol class="paper-list">{''.join(paper(p,y,lang) for y,p in earlier_papers)}</ol></details></div>
@@ -125,7 +137,7 @@ for lang in ['ja','en']:
  {section_head('05','TEACHING','担当授業・講座' if not en else 'Teaching',cp['teachingIntro'])}
  <ol class="record-list teaching-list">{''.join(record(x,lang,'teaching') for x in d['teaching'])}</ol>
 </section>
-<section class="contact-section" id="contact"><div class="container contact-grid"><div><p class="eyebrow">CONTACT</p><h2>{'研究や仕事の<br>ご相談について' if not en else 'Let’s work<br>together.'}</h2><p>{esc(cp['contactBody'])}</p></div><div class="contact-links"><a class="email" href="mailto:takaya.nakashima@nagasaki-u.ac.jp">takaya.nakashima<span>@nagasaki-u.ac.jp</span><i aria-hidden="true">↗</i></a><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link('https://x.com/naka_takaya','X')}{link('https://note.com/nakashima_takaya','note')}</div></div></div></section>
+<section class="contact-section" id="contact"><div class="container contact-grid"><div><p class="eyebrow">CONTACT</p><h2>{'研究や仕事の<br>ご相談について' if not en else 'Research<br>collaboration'}</h2><p>{esc(cp['contactBody'])}</p></div><div class="contact-links"><a class="email" href="mailto:takaya.nakashima@nagasaki-u.ac.jp">takaya.nakashima<span>@nagasaki-u.ac.jp</span><i aria-hidden="true">↗</i></a><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link('https://x.com/naka_takaya','X')}{link('https://note.com/nakashima_takaya','note')}</div></div></div></section>
 </main>
 <footer class="container site-footer"><a class="footer-name" href="#top">TAKAYA NAKASHIMA</a><p>© 2026 Takaya Nakashima</p><a href="#top">{'ページ上部へ' if not en else 'Back to top'} ↑</a></footer>
 </body>

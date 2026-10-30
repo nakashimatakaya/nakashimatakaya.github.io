@@ -31,7 +31,7 @@
     "teachingIntro": "長崎大学で医学統計学を担当しています。mJOHNSNOWでは全5回の講座で生成AIを使った研究と論文執筆を教えました。",
     "writingIntro": "医学統計と臨床研究での生成AI活用について執筆しています。noteには文献検索やスライド作成の手順、周術期データベースの解説を掲載しています。",
     "contactBody": "集中治療、臨床疫学、生物統計学に関する共同研究のご相談を受け付けています。研究の問いや計画の概要を添えてメールでご連絡ください。統計解析や講演のご相談もこちらへどうぞ。",
-    "profileResearch": "敗血症性ショックにおけるバソプレシンの開始時期を検討した筆頭著者論文が、2026年にIntensive Care Medicineに掲載されました。"
+    "profileResearch": "敗血症性ショックにおけるバソプレシンの開始時期を検討した筆頭・責任著者論文が、2026年にIntensive Care Medicineに掲載されました。"
   },
   "en": {
     "heroLead": "I am an anesthesiologist and biostatistician at Nagasaki University Hospital. I practice anesthesiology and study treatment timing and patient trajectories in sepsis and perioperative care.",
@@ -65,6 +65,6 @@
     "teachingIntro": "I teach medical statistics at Nagasaki University. I also taught a five-session course on generative AI for research and paper writing at mJOHNSNOW.",
     "writingIntro": "I write about medical statistics and the use of generative AI in clinical research. My articles on note cover literature searches, slide preparation, and perioperative databases.",
     "contactBody": "I welcome conversations with clinicians and researchers in anesthesiology, critical care, and clinical epidemiology. Please email me about academic exchange, research collaboration, or teaching.",
-    "profileResearch": "My first-author research includes a target trial emulation of vasopressin initiation in septic shock, published in Intensive Care Medicine in 2026."
+    "profileResearch": "I am the first and corresponding author of a target trial emulation of vasopressin initiation in septic shock, published in Intensive Care Medicine in 2026."
   }
 }

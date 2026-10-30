@@ -39,6 +39,7 @@ INK = colors.HexColor('#282329')
 MUTED = colors.HexColor('#5c565c')
 STYLES = {
     'body': ParagraphStyle('body', fontName=FONT, fontSize=10.7, leading=14.6, textColor=INK, spaceAfter=8),
+    'compact': ParagraphStyle('compact', fontName=FONT, fontSize=10.7, leading=14.6, textColor=INK, spaceAfter=4),
     'small': ParagraphStyle('small', fontName=FONT, fontSize=9.7, leading=13, textColor=MUTED, spaceAfter=8),
     'section': ParagraphStyle('section', fontName=BOLD, fontSize=12.8, leading=17, textColor=WINE, spaceBefore=16, spaceAfter=9, keepWithNext=True),
     'name': ParagraphStyle('name', fontName=BOLD, fontSize=27, leading=32, textColor=WINE, spaceAfter=7),
@@ -60,9 +61,9 @@ def url(href, label):
 def section(title):
     story.append(para(esc(title), 'section'))
 
-def entry(date, title, body, href=None):
+def entry(date, title, body, href=None, style='body'):
     title_html = url(href, title) if href else esc(title)
-    story.append(KeepTogether([para(f'<b>{esc(date)} | {title_html}</b><br/>{esc(body)}')]))
+    story.append(KeepTogether([para(f'<b>{esc(date)} | {title_html}</b><br/>{esc(body)}', style)]))
 
 def author_names(p):
     raw = p['authorsPre'] + p['me'] + p['authorsPost']
@@ -84,7 +85,13 @@ def publication(p, index):
     venue = m.get('venue', p['venue'])
     details = m.get('details', '')
     target = 'https://doi.org/'+m['doi'] if m.get('doi') else p['href']
-    role = 'First and corresponding author' if m.get('corresponding') else 'First author' if p.get('first') else 'Co-first author' if p.get('coFirst') else ''
+    first = m.get('first_author', p.get('first', False))
+    co_first = m.get('co_first_author', p.get('coFirst', False))
+    corresponding = m.get('corresponding', p.get('corresponding', False))
+    role = 'Co-first author' if co_first else 'First author' if first else ''
+    if corresponding:
+        role = ('Co-first and corresponding author' if co_first else
+                'First and corresponding author' if first else 'Corresponding author')
     citation = f'{index}. {authors}. {esc(title.rstrip('.'))}. <i>{esc(venue)}</i>. {esc(details.rstrip('.'))}.'
     citation += '<br/>'+url(target, 'doi: '+m['doi'] if m.get('doi') else 'Publication record')
     if m.get('code_url'):
@@ -125,8 +132,8 @@ story.append(para('<br/>'.join(esc(date)+' | '+esc(x['name']) for date,x in zip(
 
 story.append(PageBreak())
 section('Journal publications')
-story.append(para('Author order follows the publication record. First and co-first authorship are marked where applicable. Corresponding authorship is marked for the two 2026 critical care papers.', 'small'))
-papers = [p for g in SITE['pubYears'] for p in g['items'] if 'JGLOBAL_ID=202502273103904762' not in p['href']]
+story.append(para('All 12 journal publications listed here were peer reviewed. First, co-first and corresponding authorship are marked where confirmed in the publication record.', 'small'))
+papers = [p for g in SITE['pubYears'] for p in g['items'] if p.get('type') != 'conference_abstract']
 for idx, p in enumerate(papers, 1):
     if idx == 8:
         story.append(PageBreak())
@@ -135,23 +142,23 @@ for idx, p in enumerate(papers, 1):
 section('Conference abstract')
 a = CV['conference_abstract']
 story.append(para(esc(a['authors']).replace('Nakashima T', '<b>Nakashima T</b>')+'. '+esc(a['title'])+'. '+esc(a['venue'])+' '+url(a['href'], 'Abstract record')))
-section('Research tools')
-for x in CV['research_outputs']:
-    story.append(KeepTogether([para('<b>'+esc(x['title'])+'</b><br/>'+esc(x['body'])+' '+url(x['href'],x['label']))]))
+section('Teaching')
+for x in SITE['teaching']:
+    date = x.get('cvDate', x['date'])
+    body = x['meta'] + (' '+x['description'] if x.get('description') else '')
+    entry(date,x['title'],body,x.get('href'))
 
 story.append(PageBreak())
 section('Books, chapters, translations and articles')
 story.append(para('Japanese-language outputs; English titles below are translations for this CV.', 'small'))
 for x in SITE['writings']:
-    entry(x['date'],x['title'],x['meta'],x.get('href'))
-section('Teaching')
-for x in SITE['teaching']:
-    date = '2026 - present' if x['date']=='2026–' else 'On-demand course'
-    body = x['meta'] + (' '+x['description'] if x.get('description') else '')
-    entry(date,x['title'],body,x.get('href'))
+    entry(x['date'],x['title'],x['meta'],x.get('href'), style='compact')
+section('Research tools')
+for x in CV['research_outputs']:
+    story.append(KeepTogether([para('<b>'+esc(x['title'])+'</b><br/>'+esc(x['body'])+' '+url(x['href'],x['label']), 'compact')]))
 section('Awards')
 for x in SITE['awards']:
-    entry(x['date'],x['title'],x['org'])
+    entry(x['date'],x['title'],x['org'], style='compact')
 
 story.append(PageBreak())
 section('Invited lectures and conference presentations')

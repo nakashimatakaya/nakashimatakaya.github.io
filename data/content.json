@@ -5,6 +5,15 @@
         "year": "2026",
         "items": [
           {
+            "href": "https://doi.org/10.1186/s44158-026-00464-x",
+            "title": "Clinical characteristics, management, and outcomes of adults admitted to participating Japanese intensive care units with registry-identified anaphylactic shock: a multicenter retrospective descriptive study",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", M. Sekino, H. Araki, T. Ichinomiya, T. Hara",
+            "venue": "Journal of Anesthesia, Analgesia and Critical Care",
+            "first": true
+          },
+          {
             "href": "https://doi.org/10.1007/s00134-026-08575-3",
             "title": "Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a target trial emulation",
             "authorsPre": "",
@@ -216,11 +225,19 @@
         "date": "2026.10.13",
         "title": "生成AI支援による統計解析実務の有用性と課題",
         "meta": "SASユーザー総会2026 Day0企画セッション「アカデミアでの統計解析業務はどう進めるべきか」。中島誉也、佐藤俊太朗。14:25–14:50、SAS Institute Japan本社。プログラムは暫定。",
-        "tag": "登壇予定",
-        "upcoming": true,
+        "tag": "企画セッション",
         "href": "https://sas-user2026.ywstat.jp/",
         "plain": false,
         "highlight": true
+      },
+      {
+        "date": "2026.10.07",
+        "title": "AI時代の臨床研究者の立ち振る舞い方（AI時代における研究者の価値はどうなっていくのか）",
+        "meta": "高知医療再生機構リウマチ膠原病専門医養成事業 特別講演。18:00〜19:00、高知大学医学部 総合研究棟Ⅰ 1階会議室。",
+        "tag": "特別講演",
+        "href": "https://researchmap.jp/nakataka8228/presentations/55321962",
+        "plain": true,
+        "highlight": false
       },
       {
         "date": "2026.09.19",
@@ -363,13 +380,28 @@
         "name": "日本行動計量学会",
         "since": "2020–"
       }
-    ]
+    ],
+    "news": {
+      "label": "新着論文",
+      "date": "2026.10.30",
+      "title": "アナフィラキシーショックのICU登録症例を扱った記述研究を発表しました",
+      "href": "https://doi.org/10.1186/s44158-026-00464-x"
+    }
   },
   "en": {
     "pubYears": [
       {
         "year": "2026",
         "items": [
+          {
+            "href": "https://doi.org/10.1186/s44158-026-00464-x",
+            "title": "Clinical characteristics, management, and outcomes of adults admitted to participating Japanese intensive care units with registry-identified anaphylactic shock: a multicenter retrospective descriptive study",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", M. Sekino, H. Araki, T. Ichinomiya, T. Hara",
+            "venue": "Journal of Anesthesia, Analgesia and Critical Care",
+            "first": true
+          },
           {
             "href": "https://doi.org/10.1007/s00134-026-08575-3",
             "title": "Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a target trial emulation",
@@ -582,11 +614,19 @@
         "date": "2026.10.13",
         "title": "Benefits and challenges of generative AI assistance in statistical analysis practice",
         "meta": "SAS User Meeting 2026, Day 0 session on statistical analysis in academia. Takaya Nakashima and Shuntaro Sato. 14:25–14:50, SAS Institute Japan headquarters. Tentative program.",
-        "tag": "SCHEDULED",
-        "upcoming": true,
+        "tag": "SESSION",
         "href": "https://sas-user2026.ywstat.jp/",
         "plain": false,
         "highlight": true
+      },
+      {
+        "date": "2026.10.07",
+        "title": "Clinical researchers in the AI era: how will the value of researchers change?",
+        "meta": "Invited lecture for the Kochi Medical Revitalization Organization rheumatology specialist training program. 18:00–19:00, Kochi Medical School, Kochi University.",
+        "tag": "INVITED LECTURE",
+        "href": "https://researchmap.jp/nakataka8228/presentations/55321962",
+        "plain": true,
+        "highlight": false
       },
       {
         "date": "2026.09.19",
@@ -729,6 +769,12 @@
         "name": "Behaviormetric Society of Japan",
         "since": "2020–"
       }
-    ]
+    ],
+    "news": {
+      "label": "NEW PUBLICATION",
+      "date": "2026.10.30",
+      "title": "New paper on ICU admissions with registry-identified anaphylactic shock",
+      "href": "https://doi.org/10.1186/s44158-026-00464-x"
+    }
   }
 }

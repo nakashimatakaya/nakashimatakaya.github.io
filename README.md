@@ -6,7 +6,7 @@ GitHub Pagesで公開する日英の静的サイト。
 - `en/index.html`：英語ページ
 - `style.css`：共通スタイル
 - `site.js`：モバイルメニューとアンカー操作
-- `data/content.json`：業績・リンク・日付
+- `data/content.json`：業績・リンク・日付・トップのお知らせ
 - `data/copy.json`：プロフィールなどの紹介文
 - `scripts/build.py`：日英HTMLの生成
 - `portrait.jpg`：プロフィール写真（1968×1968px）
@@ -28,7 +28,9 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 ## 記録上の扱い
 
-- SASユーザー総会2026の登壇は予定。実施済みの発表件数には含めない。
+- SASユーザー総会2026はプログラム掲載内容として記録している。講演・学会発表の件数には、プログラム掲載の発表も含む。
+- 2026年10月7日の高知大学での特別講演は、最終案内と[researchmapの登録内容](https://researchmap.jp/nakataka8228/presentations/55321962)に基づく。
+- プロフィールと連絡先欄にresearchmap・LinkedInへのリンクを掲載する。LinkedInは本人の公開プロフィールURLを使用する。
 - mJOHNSNOWの担当年月は未確認のため掲載していない。
 - 「Gen AI時代のタイパ・コスパ論文執筆術」は医学書院の[公式連載一覧](https://www.igaku-shoin.co.jp/paperplus/series/00001)に基づき、全10回のWeb連載1件として掲載する。旧サイトの同名の書籍項目と連載項目を統合した。
 - 正式な論文名・演題名は維持し、紹介文とは分けて管理する。

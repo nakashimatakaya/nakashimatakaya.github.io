@@ -1,6 +1,6 @@
 {
-  "updated": "October 30, 2026",
-  "source_note": "Physician appointment began in April 2024, confirmed by the author on October 30, 2026. Education dates are retained from the previously published CV dated August 29, 2026; the doctorate remains in progress. Publications, teaching, writing, memberships, awards and presentations are synchronized with the October 30, 2026 researchmap audit and publisher/PubMed evidence. The author confirmed peer review of the 2023 Intensive Care Medicine correspondence and the 2022 Nagasaki Medical Journal article. English titles of Japanese-language outputs are translations for this CV.",
+  "updated": "November 8, 2026",
+  "source_note": "Physician appointment began in April 2024, confirmed by the author on October 30, 2026. Education dates are retained from the previously published CV dated August 29, 2026; the doctorate remains in progress. Publications, teaching, writing, memberships, awards and presentations are synchronized with the October 30, 2026 researchmap audit and publisher/PubMed evidence. The author confirmed peer review of the 2023 Intensive Care Medicine correspondence and the 2022 Nagasaki Medical Journal article. English titles of Japanese-language outputs are translations for this CV. Publications and Google Scholar profile reconciled with publisher, PubMed and Crossref records on November 8, 2026. Journal publications, corrections, conference abstracts and preprints are listed separately.",
   "positions": [
     [
       "April 2026 - present",
@@ -115,7 +115,8 @@
       "corresponding": false,
       "first_author": false,
       "co_first_author": true,
-      "pmid": "39992173"
+      "pmid": "39992173",
+      "authors": "Liu K, Nakashima T, Goto T, Nakamura K, Nakano H, Motoki M, Kamijo H, Matsuoka Ayaka, Ishii K, Morita Y, et al."
     },
     "https://doi.org/10.1536/ihj.23-659": {
       "details": "2024;65(6):1058-1065",
@@ -172,6 +173,83 @@
       "first_author": false,
       "co_first_author": false,
       "pmid": "34670483"
+    },
+    "https://doi.org/10.1038/s41598-026-52954-1": {
+      "details": "2026;16(1):14765",
+      "doi": "10.1038/s41598-026-52954-1",
+      "venue": "Scientific Reports",
+      "authors": "Nagasu H, Nakashima T, Ihara K, Fujimori R, Goto T, Nitta D, Kishi S, Sasaki T, Kashihara N",
+      "article_type": "Correction",
+      "peer_reviewed": null,
+      "first_author": false,
+      "co_first_author": false,
+      "corresponding": null
+    },
+    "https://doi.org/10.1007/s00134-025-08115-5": {
+      "details": "2025;51(11):2192-2193",
+      "doi": "10.1007/s00134-025-08115-5",
+      "venue": "Intensive Care Medicine",
+      "authors": "Nakahashi S, Suzuki K, Nakashima T, Hayashi Y, Tanabe Y, Tanaka A, Hashiuchi S, Yamashita C, Ito Y, Wada T, Yamashita A, Shima M, Hoshino T, Moriyama K, Kazuma S, Lee HA, Yamaguchi Y, Nakamura Y, Kawanobe Y, Sofue T, Nishimura Y, Shinozaki T, Goto T, Hashimoto S, Fujino Y, Shime N, the Japan VAE study Investigators Group",
+      "article_type": "Correction",
+      "peer_reviewed": null,
+      "first_author": false,
+      "co_first_author": false,
+      "corresponding": null
+    },
+    "https://doi.org/10.1016/j.ekir.2026.104712": {
+      "details": "2026;11(4):104712",
+      "doi": "10.1016/j.ekir.2026.104712",
+      "venue": "Kidney International Reports",
+      "authors": "Hirano A, Nagusu H, Nakashima T, Goto T, Kashihara N",
+      "article_type": "Published conference abstract",
+      "peer_reviewed": null,
+      "first_author": false,
+      "co_first_author": false,
+      "corresponding": null
+    },
+    "https://doi.org/10.1016/j.ekir.2026.104301": {
+      "details": "2026;11(4):104301",
+      "doi": "10.1016/j.ekir.2026.104301",
+      "venue": "Kidney International Reports",
+      "authors": "Nagasu H, Nakashima T, Goto T, Kishi S, Take K, Kikuchi N, Hirano A, Itano S, Hashimoto M, Kashihara N",
+      "article_type": "Published conference abstract",
+      "peer_reviewed": null,
+      "first_author": false,
+      "co_first_author": false,
+      "corresponding": null
+    },
+    "https://doi.org/10.1016/j.ekir.2026.104334": {
+      "details": "2026;11(4):104334",
+      "doi": "10.1016/j.ekir.2026.104334",
+      "venue": "Kidney International Reports",
+      "authors": "Itano S, Kashihara N, Nakashima T, Goto T, Yoshihara K, Eguchi S, Iekushi K, Isaka Y, Nagasu H",
+      "article_type": "Published conference abstract",
+      "peer_reviewed": null,
+      "first_author": false,
+      "co_first_author": false,
+      "corresponding": null
+    },
+    "https://doi.org/10.21203/rs.3.rs-6632548/v1": {
+      "details": "Posted May 20, 2025. Version 1. Preprint",
+      "doi": "10.21203/rs.3.rs-6632548/v1",
+      "venue": "Research Square",
+      "authors": "Nakashima T, Sato S, Sekino M, Tanaka T, Sonoo T, Goto T, Shibata J, Osawa I, Izumikawa K, Tasaki O, Hara T",
+      "article_type": "Preprint",
+      "peer_reviewed": false,
+      "first_author": true,
+      "co_first_author": false,
+      "corresponding": null
+    },
+    "https://doi.org/10.1007/s00134-026-08634-9": {
+      "details": "Published online November 2, 2026",
+      "doi": "10.1007/s00134-026-08634-9",
+      "venue": "Intensive Care Medicine",
+      "article_type": "Correspondence",
+      "peer_reviewed": true,
+      "first_author": true,
+      "co_first_author": false,
+      "corresponding": true,
+      "pmid": "42970130"
     }
   },
   "conference_abstract": {
@@ -211,5 +289,25 @@
     "September 2021 - present",
     "June 2021 - present",
     "November 2020 - present"
+  ],
+  "updated_iso": "2026-11-08",
+  "google_scholar_url": "https://scholar.google.com/citations?user=UVULTp0AAAAJ&hl=en",
+  "peer_review_service": [
+    {
+      "journal": "Journal of Intensive Care",
+      "years": "2026"
+    },
+    {
+      "journal": "MedComm",
+      "years": "2026"
+    },
+    {
+      "journal": "BMC Geriatrics",
+      "years": "2025"
+    },
+    {
+      "journal": "BMC Cardiovascular Disorders",
+      "years": "2025"
+    }
   ]
 }

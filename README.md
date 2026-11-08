@@ -29,7 +29,7 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 本文と業績はJavaScriptがなくても読める。CSS・JavaScriptを変更したときは、`scripts/build.py`の読み込みURLに付けた`v`を更新してから再生成する。
 
-CVは`data/content.json`の業績と`data/cv.json`から生成する。更新日は`data/cv.json`とページ内のCV更新日を揃える。
+CVは`data/content.json`の業績と`data/cv.json`から生成する。`data/cv.json`の`updated_iso`からページ内のCV更新日とPDFリンクの版を生成する。`updated`はPDF内の日付に用いる。
 
 ```sh
 python3 scripts/build_cv.py
@@ -41,13 +41,13 @@ python3 scripts/build_cv.py
 
 - SASユーザー総会2026はプログラム掲載内容として記録している。講演・学会発表の件数には、プログラム掲載の発表も含む。
 - 2026年10月7日の高知大学での特別講演は、最終案内と[researchmapの登録内容](https://researchmap.jp/nakataka8228/presentations/55321962)に基づく。
-- プロフィールと連絡先欄にresearchmap・LinkedInへのリンクを掲載する。LinkedInは本人の公開プロフィールURLを使用する。
+- プロフィールと連絡先欄にresearchmap・LinkedIn・Google Scholarへのリンクを掲載する。LinkedInは本人の公開プロフィールURLを使用する。
 - mJOHNSNOWの担当年月は未確認のため掲載していない。
 - 「Gen AI時代のタイパ・コスパ論文執筆術」は医学書院の[公式連載一覧](https://www.igaku-shoin.co.jp/paperplus/series/00001)に基づき、全10回のWeb連載1件として掲載する。旧サイトの同名の書籍項目と連載項目を統合した。
 - 正式な論文名・演題名は維持し、紹介文とは分けて管理する。
 - 代表研究は研究の問いと解析方法を紹介する。ICM論文の責任著者表示と解析コードは[出版社の記載](https://link.springer.com/article/10.1007/s00134-026-08575-3)、乳酸の研究は[International Heart Journalの原著論文](https://doi.org/10.1536/ihj.23-659)に基づく。
 - 学位は博士課程在籍として記載する。学位取得日、海外留学の開始時期・受け入れ先など、未確定の予定は掲載しない。
-- 2026年10月30日時点の査読論文は12件（Correspondenceを含む）。WebとCVで学会抄録1件を別に掲載する。演題査読と論文査読は区別する。共同筆頭著者4件、責任著者3件。
+- 2026年11月8日時点の査読論文は13件（原著11件、Letter・Correspondence 2件）。WebとCVで種類ごとに分け、訂正記事2件、学会抄録4件、プレプリント1件を別に掲載する。これらは査読論文数に含めない。共同筆頭著者4件、責任著者4件。
 
 ## プロフィール写真
 
@@ -58,3 +58,7 @@ python3 scripts/build_cv.py
 2026年10月30日、Claude Opus 5.5のデザイン提案をもとに共通CSSを更新。暖色の紙色、バーガンディの見出し、オレンジのリンクを使用する。本文はPCで18px、スマートフォンで17px。論文は年別に掲載する。
 
 見出しや写真の登場は1回だけ。ヘッダーの停止ボタンと端末の「視差効果を減らす」設定に対応し、停止状態をブラウザーに保存する。JavaScriptが無効でも本文とナビゲーションを表示する。写真そのものは加工していない。
+
+## 2026年11月8日の更新
+
+ICMのAuthor’s reply（2026年11月2日、doi:10.1007/s00134-026-08634-9）を追加。出版社・PubMed・Crossrefの記録に基づき、原著、Letter、訂正記事、学会抄録、プレプリントを分けた。研究者本人のGoogle Scholarは`UVULTp0AAAAJ`。査読活動は完了を確認できた誌名と年を掲載し、査読原稿の情報は公開しない。医学部の医学統計学はresearchmapの現行記録に従って2026年11月からの担当科目とした。

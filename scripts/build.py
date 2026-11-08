@@ -1,9 +1,13 @@
 from pathlib import Path
 import json, html, re
+from datetime import date
 ROOT=Path(__file__).resolve().parent.parent
 D=json.loads((ROOT/'data/content.json').read_text(encoding='utf-8'))
 C=json.loads((ROOT/'data/copy.json').read_text(encoding='utf-8'))
 R=json.loads((ROOT/'data/research.json').read_text(encoding='utf-8'))
+CV=json.loads((ROOT/'data/cv.json').read_text(encoding='utf-8'))
+SCHOLAR=CV['google_scholar_url']
+UPDATED=date.fromisoformat(CV['updated_iso'])
 LINKEDIN='https://www.linkedin.com/in/%E8%AA%89%E4%B9%9F-%E4%B8%AD%E5%B3%B6-a26263443/'
 esc=lambda s:html.escape(str(s),quote=True)
 def text_lang(text):
@@ -27,7 +31,7 @@ def paper(p,year,lang):
   role='学会抄録' if lang=='ja' else 'Conference abstract'
  authors=esc(p['authorsPre'])+f'<strong>{esc(p["me"])}</strong>'+esc(p['authorsPost'])
  review=('査読あり' if lang=='ja' else 'Peer reviewed') if p.get('peerReviewed') else ('演題査読あり' if lang=='ja' else 'Reviewed abstract') if p.get('abstractReviewed') else ''
- kind=('レター（Correspondence）' if lang=='ja' else 'Correspondence') if p.get('type')=='correspondence' else ''
+ kind={'correspondence': ('レター（Correspondence）','Correspondence'), 'correction': ('訂正','Correction'), 'preprint': ('プレプリント（査読前）','Preprint; not peer reviewed')}.get(p.get('type'), ('',''))[lang=='en']
  tags=' · '.join(x for x in [review,role,kind] if x)
  note=f'<p class="publication-note">{esc(p["publicationNote"])}</p>' if p.get('publicationNote') else ''
  return f'<li class="paper"><div class="paper-meta"><span>{esc(p["venue"])}</span>{f"<span>{esc(tags)}</span>" if tags else ""}</div><h5 lang="{text_lang(p["title"])}"><a href="{esc(p["href"])}" target="_blank" rel="noopener noreferrer">{esc(p["title"])}<span class="record-arrow" aria-hidden="true">↗</span></a></h5><p class="authors" lang="{text_lang(p["authorsPre"]+p["me"]+p["authorsPost"])}">{authors}</p>{note}</li>'
@@ -43,14 +47,8 @@ for lang in ['ja','en']:
  en=lang=='en';d=D[lang];cp=C[lang];base='../' if en else './'
  writings=d['writings']
  all_papers=[(g['year'],p) for g in d['pubYears'] for p in g['items']]
- papers=[(y,p) for y,p in all_papers if p.get('type')!='conference_abstract']
+ papers=[(y,p) for y,p in all_papers if p.get('type') in {'journal_article','correspondence','letter'}]
  abstracts=[(y,p) for y,p in all_papers if p.get('type')=='conference_abstract']
- latest_year=d['pubYears'][0]['year']
- latest_papers=[(y,p) for y,p in papers if y==latest_year]
- earlier_papers=[(y,p) for y,p in papers if y!=latest_year]
- earlier_years=sorted({y for y,p in earlier_papers})
- earlier_span=f'{earlier_years[0]}–{earlier_years[-1]}' if earlier_years else ''
- earlier_label=f'{earlier_span}年の論文を見る（{len(earlier_papers)}件）' if not en else f'Earlier publications, {earlier_span} ({len(earlier_papers)})'
  earlier_talks=d['talks'][4:]
  earlier_talks_label=f'過去の学会発表を見る（{len(earlier_talks)}件）' if not en else f'Earlier presentations ({len(earlier_talks)})'
  nav=[('profile','Profile' if en else 'プロフィール'),('research','Research' if en else '研究・論文'),('writing','Writing' if en else '執筆・発信'),('talks','Talks' if en else '講演'),('teaching','Teaching' if en else '教育')]
@@ -69,8 +67,33 @@ for lang in ['ja','en']:
  works=''.join(f'<article><span class="eyebrow">{"WEB APPLICATION" if i==0 else "RESEARCH TOOL"}</span><h4>{esc(x["title"])}</h4><p>{esc(x["body"])}</p>{link(worklinks[i],"詳細を見る" if not en else "View project")}</article>' for i,x in enumerate(cp['works']))
  keywords=''.join(f'<li>{esc(x)}</li>' for x in d['keywords'])
  notes=''.join(f'<li><a href="{esc(x["href"])}" target="_blank" rel="noopener noreferrer"><span class="note-date">{esc(x["date"])}</span><h4 lang="{text_lang(x["title"])}">{esc(x["title"].replace(" — ","：" if not en else ": "))}</h4><span aria-hidden="true">↗</span></a></li>' for x in d['notes'])
- heading_papers='査読論文' if not en else 'Peer-reviewed publications'
- abstract_block=('<div class="abstracts" id="abstracts"><div class="subsection-head"><h3>'+('学会抄録' if not en else 'Conference abstract')+f'</h3><span>{len(abstracts)}</span></div>'+publication_groups(abstracts,lang)+'</div>') if abstracts else ''
+ publication_blocks=[]
+ for record_type, anchor, labels in [
+  ('journal_article','papers',('原著論文','Original articles')),
+  ('correspondence','letters',('レター・Correspondence','Letters and correspondence')),
+  ('correction','corrections',('訂正記事','Corrections')),
+  ('conference_abstract','abstracts',('学会抄録','Conference abstracts')),
+  ('preprint','preprints',('プレプリント','Preprints')),
+ ]:
+  rows=[(y,p) for y,p in all_papers if p.get('type')==record_type]
+  if not rows: continue
+  heading=labels[en]
+  if record_type=='journal_article':
+   latest_year=max(y for y,p in rows)
+   recent=[(y,p) for y,p in rows if y==latest_year]
+   earlier=[(y,p) for y,p in rows if y!=latest_year]
+   body=publication_groups(recent,lang)
+   if earlier:
+    label=f'過去の原著論文を見る（{len(earlier)}件）' if not en else f'Earlier original articles ({len(earlier)})'
+    body+=f'<details class="disclosure"><summary><span>{esc(label)}</span><span class="plus" aria-hidden="true"></span></summary>{publication_groups(earlier,lang)}</details>'
+  else:
+   body=publication_groups(rows,lang)
+  publication_blocks.append(f'<div class="publications" id="{anchor}"><div class="subsection-head"><h3>{heading}</h3><span>{len(rows)}</span></div>{body}</div>')
+ publications_html=''.join(publication_blocks)
+ review_heading='学術誌の査読' if not en else 'Peer review service'
+ review_items=''.join(f'<li>{esc(x["journal"])} <span>{esc(x["years"])}</span></li>' for x in CV.get('peer_review_service',[]))
+ service_html=f'<div class="works"><div class="subsection-head"><h3>{review_heading}</h3></div><ul class="society-list">{review_items}</ul></div>' if review_items else ''
+ cv_update=f'英文CV更新日：{UPDATED.year}年{UPDATED.month}月{UPDATED.day}日' if not en else f'Academic CV updated {UPDATED.day} {UPDATED:%B %Y}'
  html_doc=f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -96,7 +119,7 @@ for lang in ['ja','en']:
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@500&family=DM+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}style.css?v=20261030c">
 <script defer src="{base}site.js?v=20261030c"></script>
-<script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'Person','name':'中島誉也','alternateName':'Takaya Nakashima','jobTitle':'Anesthesiologist and Biostatistician','url':'https://nakashimatakaya.github.io/','image':'https://nakashimatakaya.github.io/portrait.jpg','worksFor':{'@type':'Organization','name':'Nagasaki University Hospital'},'sameAs':['https://researchmap.jp/nakataka8228',LINKEDIN,'https://orcid.org/0009-0001-4214-3945','https://github.com/nakashimatakaya']},ensure_ascii=False)}</script>
+<script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'Person','name':'中島誉也','alternateName':'Takaya Nakashima','jobTitle':'Anesthesiologist and Biostatistician','url':'https://nakashimatakaya.github.io/','image':'https://nakashimatakaya.github.io/portrait.jpg','worksFor':{'@type':'Organization','name':'Nagasaki University Hospital'},'sameAs':[SCHOLAR,'https://researchmap.jp/nakataka8228',LINKEDIN,'https://orcid.org/0009-0001-4214-3945','https://github.com/nakashimatakaya']},ensure_ascii=False)}</script>
 </head>
 <body>
 <div class="scroll-progress" aria-hidden="true"></div>
@@ -117,7 +140,7 @@ for lang in ['ja','en']:
    <h1>{hero}</h1>
    <p class="hero-name">{author}<span>{'麻酔科医・生物統計家' if not en else 'M.D. / Anesthesiologist & Biostatistician'}</span></p>
    <p class="hero-lead">{esc(cp['heroLead'])}</p>
-   <div class="hero-links"><a class="button" href="#selected-research">{'代表研究を見る' if not en else 'Selected research'}<span aria-hidden="true">↓</span></a><a class="quiet-link" href="{base}Takaya_Nakashima_CV.pdf" target="_blank" rel="noopener noreferrer">{'英文CV（PDF）' if not en else 'Academic CV (PDF)'}<span aria-hidden="true">↗</span></a></div>
+   <div class="hero-links"><a class="button" href="#selected-research">{'代表研究を見る' if not en else 'Selected research'}<span aria-hidden="true">↓</span></a><a class="quiet-link" href="{base}Takaya_Nakashima_CV.pdf?v={CV["updated_iso"]}" target="_blank" rel="noopener noreferrer">{'英文CV（PDF）' if not en else 'Academic CV (PDF)'}<span aria-hidden="true">↗</span></a></div>
   </div>
   <figure class="hero-photo"><img src="{base}portrait.jpg" alt="{'中島誉也のポートレート' if not en else 'Portrait of Takaya Nakashima'}" width="1968" height="1968" fetchpriority="high"><figcaption>NAGASAKI, JAPAN</figcaption></figure>
  </div>
@@ -126,7 +149,7 @@ for lang in ['ja','en']:
 <aside class="news"><div class="container"><span class="eyebrow">{esc(news['label'])}</span><span class="news-date">{esc(news['date'])}</span><a href="{esc(news['href'])}" target="_blank" rel="noopener noreferrer">{esc(news['title'])}<span aria-hidden="true">↗</span></a></div></aside>
 <section class="section container" id="profile">
  {section_head('01','PROFILE','プロフィール' if not en else 'About me')}
- <div class="profile-grid"><div class="profile-copy"><h3>{author}<span>{'Takaya Nakashima, M.D.' if not en else 'Nagasaki University Hospital'}</span></h3><p>{esc(cp['profileIntro'])}</p><p>{esc(cp['profileBody'])}</p><p>{esc(cp['profileResearch'])}</p><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link('https://orcid.org/0009-0001-4214-3945','ORCID')}<a class="text-link" href="{base}Takaya_Nakashima_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)<span aria-hidden="true">↗</span></a></div><p class="cv-updated">{'英文CV更新日：2026年10月30日' if not en else 'Academic CV updated 30 October 2026'}</p></div><dl class="profile-facts">{meta}</dl></div>
+ <div class="profile-grid"><div class="profile-copy"><h3>{author}<span>{'Takaya Nakashima, M.D.' if not en else 'Nagasaki University Hospital'}</span></h3><p>{esc(cp['profileIntro'])}</p><p>{esc(cp['profileBody'])}</p><p>{esc(cp['profileResearch'])}</p><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link(SCHOLAR,'Google Scholar')}{link('https://orcid.org/0009-0001-4214-3945','ORCID')}<a class="text-link" href="{base}Takaya_Nakashima_CV.pdf?v={CV["updated_iso"]}" target="_blank" rel="noopener noreferrer">CV (PDF)<span aria-hidden="true">↗</span></a></div><p class="cv-updated">{esc(cv_update)}</p></div><dl class="profile-facts">{meta}</dl></div>
  <details class="disclosure profile-details" id="awards"><summary><span>{'受賞・所属学会' if not en else 'Awards & memberships'}</span><span aria-hidden="true" class="plus"></span></summary><div class="award-grid"><ol class="award-list">{awards}</ol><div><h3>{'所属学会' if not en else 'Memberships'}</h3><ul class="society-list">{societies}</ul></div></div></details>
 </section>
 <section class="section research-section" id="research"><div class="container">
@@ -135,7 +158,7 @@ for lang in ['ja','en']:
  <div class="subsection-head methods-heading"><h3>{'研究領域と解析方法' if not en else 'Research focus & methods'}</h3></div>
  <div class="research-themes">{themes}</div>
  <div class="keyword-area"><h3>RESEARCH KEYWORDS</h3><ul>{keywords}</ul></div>
- <div class="publications" id="papers"><div class="subsection-head"><h3>{heading_papers}</h3><span>{len(papers)} {"PAPERS" if en else "件"}</span></div>{publication_groups(latest_papers,lang)}<details class="disclosure"><summary><span>{esc(earlier_label)}</span><span class="plus" aria-hidden="true"></span></summary>{publication_groups(earlier_papers,lang)}</details></div>{abstract_block}
+ {publications_html}
  <div class="works" id="works"><div class="subsection-head"><h3>{'開発・制作' if not en else 'Tools & applications'}</h3><span>PROJECTS</span></div><div class="work-grid">{works}</div></div>
 </div></section>
 <section class="section container" id="writing">
@@ -150,9 +173,9 @@ for lang in ['ja','en']:
 </div></section>
 <section class="section container" id="teaching">
  {section_head('05','TEACHING','担当授業・講座' if not en else 'Teaching',cp['teachingIntro'])}
- <ol class="record-list teaching-list">{''.join(record(x,lang,'teaching') for x in d['teaching'])}</ol>
+ <ol class="record-list teaching-list">{''.join(record(x,lang,'teaching') for x in d['teaching'])}</ol>{service_html}
 </section>
-<section class="contact-section" id="contact"><div class="container contact-grid" data-reveal><div><p class="eyebrow">CONTACT</p><h2>{'研究や仕事の<br>ご相談について' if not en else 'Get in touch'}</h2><p>{esc(cp['contactBody'])}</p></div><div class="contact-links"><a class="email" href="mailto:takaya.nakashima@nagasaki-u.ac.jp">takaya.nakashima<span>@nagasaki-u.ac.jp</span><i aria-hidden="true">↗</i></a><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link('https://x.com/naka_takaya','X')}{link('https://note.com/nakashima_takaya','note')}</div></div></div></section>
+<section class="contact-section" id="contact"><div class="container contact-grid" data-reveal><div><p class="eyebrow">CONTACT</p><h2>{'研究や仕事の<br>ご相談について' if not en else 'Get in touch'}</h2><p>{esc(cp['contactBody'])}</p></div><div class="contact-links"><a class="email" href="mailto:takaya.nakashima@nagasaki-u.ac.jp">takaya.nakashima<span>@nagasaki-u.ac.jp</span><i aria-hidden="true">↗</i></a><div class="inline-links">{link('https://researchmap.jp/nakataka8228','researchmap')}{link(LINKEDIN,'LinkedIn')}{link(SCHOLAR,'Google Scholar')}{link('https://x.com/naka_takaya','X')}{link('https://note.com/nakashima_takaya','note')}</div></div></div></section>
 </main>
 <footer class="container site-footer"><a class="footer-name" href="#top">TAKAYA NAKASHIMA</a><p>© 2026 Takaya Nakashima</p><a href="#top">{'ページ上部へ' if not en else 'Back to top'} ↑</a></footer>
 </body>

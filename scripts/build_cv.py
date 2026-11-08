@@ -42,6 +42,7 @@ STYLES = {
     'compact': ParagraphStyle('compact', fontName=FONT, fontSize=10.7, leading=14.6, textColor=INK, spaceAfter=4),
     'small': ParagraphStyle('small', fontName=FONT, fontSize=9.7, leading=13, textColor=MUTED, spaceAfter=8),
     'section': ParagraphStyle('section', fontName=BOLD, fontSize=12.8, leading=17, textColor=WINE, spaceBefore=16, spaceAfter=9, keepWithNext=True),
+    'subsection': ParagraphStyle('subsection', fontName=BOLD, fontSize=11.5, leading=15, textColor=INK, spaceBefore=10, spaceAfter=8, keepWithNext=True),
     'name': ParagraphStyle('name', fontName=BOLD, fontSize=27, leading=32, textColor=WINE, spaceAfter=7),
     'subtitle': ParagraphStyle('subtitle', fontName=FONT, fontSize=12, leading=16, textColor=INK, spaceAfter=10),
 }
@@ -73,12 +74,24 @@ def author_names(p):
         names.append(m.group(2)+' '+re.sub('[. ]','',m.group(1)) if m else n)
     return ', '.join(names)
 
-def publication(p, index):
+def publication_metadata(p):
     m = CV['publication_metadata'].get(p['href'])
     if m is None:
         m = next((v for v in CV['publication_metadata'].values() if v.get('doi') and p['href'].rstrip('/') == 'https://doi.org/'+v['doi']), None)
     if m is None:
         raise ValueError(f"Missing CV bibliography metadata for {p['title']}")
+    return m
+
+def publication_group(p):
+    article_type = publication_metadata(p).get('article_type', '').strip().casefold()
+    if article_type in {'original article', 'original research', 'research article'}:
+        return 'Original articles'
+    if article_type in {'letter', 'letter to the editor', 'correspondence', 'reply', 'author reply'}:
+        return 'Letters and correspondence'
+    raise ValueError(f"Unclassified CV article type {article_type!r} for {p['title']}")
+
+def publication(p, index):
+    m = publication_metadata(p)
     authors = m.get('authors', author_names(p)) + m.get('author_suffix', '')
     authors = esc(authors.rstrip('.')).replace('Nakashima T', '<b>Nakashima T</b>')
     title = m.get('title', p['title'])
@@ -92,12 +105,21 @@ def publication(p, index):
     if corresponding:
         role = ('Co-first and corresponding author' if co_first else
                 'First and corresponding author' if first else 'Corresponding author')
-    citation = f'{index}. {authors}. {esc(title.rstrip('.'))}. <i>{esc(venue)}</i>. {esc(details.rstrip('.'))}.'
+    citation = f'{index}. {authors}. {esc(title.rstrip('.'))}. <i>{esc(venue.rstrip('.'))}</i>.'
+    if details:
+        citation += f' {esc(details.rstrip('.'))}.'
     citation += '<br/>'+url(target, 'doi: '+m['doi'] if m.get('doi') else 'Publication record')
     if m.get('code_url'):
         citation += ' | '+url(m['code_url'], 'Analysis code')
     if role:
         citation += f' <font color="#5c565c">| {esc(role)}</font>'
+    return KeepTogether([para(citation)])
+
+def conference_abstract(p, index):
+    a = CV.get('conference_abstract', {})
+    if a.get('href') != p['href']:
+        return publication(p, index)
+    citation = f'{index}. '+esc(a['authors']).replace('Nakashima T', '<b>Nakashima T</b>')+'. '+esc(a['title'])+'. '+esc(a['venue'])+' '+url(a['href'], 'Abstract record')
     return KeepTogether([para(citation)])
 
 def header_footer(canvas, doc):
@@ -115,7 +137,17 @@ def header_footer(canvas, doc):
     canvas.restoreState()
 
 story = [para('Takaya Nakashima, M.D.', 'name'), para('Anesthesiologist and biostatistician', 'subtitle')]
-story.append(para('Nagasaki University Hospital, Nagasaki, Japan<br/>'+url('mailto:takaya.nakashima@nagasaki-u.ac.jp','takaya.nakashima@nagasaki-u.ac.jp')+'<br/>'+url('https://nakashimatakaya.github.io/en/','Personal website')+' | '+url('https://researchmap.jp/nakataka8228?lang=en','researchmap')+' | '+url('https://orcid.org/0009-0001-4214-3945','ORCID 0009-0001-4214-3945')+' | '+url('https://www.linkedin.com/in/%E8%AA%89%E4%B9%9F-%E4%B8%AD%E5%B3%B6-a26263443/','LinkedIn'), 'small'))
+profile_links = [
+    url('https://nakashimatakaya.github.io/en/', 'Personal website'),
+    url('https://researchmap.jp/nakataka8228?lang=en', 'researchmap'),
+]
+if CV.get('google_scholar_url'):
+    profile_links.append(url(CV['google_scholar_url'], 'Google Scholar'))
+profile_links.extend([
+    url('https://orcid.org/0009-0001-4214-3945', 'ORCID 0009-0001-4214-3945'),
+    url('https://www.linkedin.com/in/%E8%AA%89%E4%B9%9F-%E4%B8%AD%E5%B3%B6-a26263443/', 'LinkedIn'),
+])
+story.append(para('Nagasaki University Hospital, Nagasaki, Japan<br/>'+url('mailto:takaya.nakashima@nagasaki-u.ac.jp','takaya.nakashima@nagasaki-u.ac.jp')+'<br/>'+' | '.join(profile_links), 'small'))
 section('Research profile')
 story.append(para(esc(CV['research_profile'])))
 section('Appointments')
@@ -132,21 +164,45 @@ story.append(para('<br/>'.join(esc(date)+' | '+esc(x['name']) for date,x in zip(
 
 story.append(PageBreak())
 section('Journal publications')
-story.append(para('All 12 journal publications listed here were peer reviewed. First, co-first and corresponding authorship are marked where confirmed in the publication record.', 'small'))
-papers = [p for g in SITE['pubYears'] for p in g['items'] if p.get('type') != 'conference_abstract']
-for idx, p in enumerate(papers, 1):
-    if idx == 8:
+records = [p for g in SITE['pubYears'] for p in g['items']]
+known_types = {'journal_article', 'correspondence', 'letter', 'correction', 'conference_abstract', 'preprint'}
+for p in records:
+    if p.get('type') not in known_types:
+        raise ValueError(f"Unclassified CV record type {p.get('type')!r} for {p['title']}")
+papers = [p for p in records if p['type'] in {'journal_article', 'correspondence', 'letter'}]
+groups = {'Original articles': [], 'Letters and correspondence': []}
+for p in papers:
+    groups[publication_group(p)].append(p)
+if all(publication_metadata(p).get('peer_reviewed') is True for p in papers):
+    review_note = f'All {len(papers)} journal publications listed here were peer reviewed. '
+else:
+    review_note = ''
+story.append(para(review_note+'First, co-first and corresponding authorship are marked where confirmed in the publication record.', 'small'))
+for heading, items in groups.items():
+    if not items:
+        continue
+    story.append(para(esc(heading), 'subsection'))
+    for idx, p in enumerate(items, 1):
+        story.append(publication(p,idx))
+for record_type, heading in [('correction', 'Corrections'), ('conference_abstract', 'Conference abstracts'), ('preprint', 'Preprints')]:
+    items = [p for p in records if p['type'] == record_type]
+    if not items:
+        continue
+    if record_type == 'conference_abstract':
         story.append(PageBreak())
-        section('Journal publications (continued)')
-    story.append(publication(p,idx))
-section('Conference abstract')
-a = CV['conference_abstract']
-story.append(para(esc(a['authors']).replace('Nakashima T', '<b>Nakashima T</b>')+'. '+esc(a['title'])+'. '+esc(a['venue'])+' '+url(a['href'], 'Abstract record')))
+    section(heading)
+    if record_type == 'preprint':
+        story.append(para('Preprints have not completed journal peer review.', 'small'))
+    for idx, p in enumerate(items, 1):
+        story.append(conference_abstract(p, idx) if record_type == 'conference_abstract' else publication(p, idx))
 section('Teaching')
 for x in SITE['teaching']:
     date = x.get('cvDate', x['date'])
     body = x['meta'] + (' '+x['description'] if x.get('description') else '')
     entry(date,x['title'],body,x.get('href'))
+if CV.get('peer_review_service'):
+    section('Peer review service')
+    story.append(para('<br/>'.join(esc(x['years'])+' | '+esc(x['journal']) for x in CV['peer_review_service']), 'small'))
 
 story.append(PageBreak())
 section('Books, chapters, translations and articles')

@@ -1,6 +1,6 @@
 {
-  "updated": "November 8, 2026",
-  "source_note": "Physician appointment began in April 2024, confirmed by the author on October 30, 2026. Education dates are retained from the previously published CV dated August 29, 2026; the doctorate remains in progress. Publications, teaching, writing, memberships, awards and presentations are synchronized with the October 30, 2026 researchmap audit and publisher/PubMed evidence. The author confirmed peer review of the 2023 Intensive Care Medicine correspondence and the 2022 Nagasaki Medical Journal article. English titles of Japanese-language outputs are translations for this CV. Publications and Google Scholar profile reconciled with publisher, PubMed and Crossref records on November 8, 2026. Journal publications, corrections, conference abstracts and preprints are listed separately.",
+  "updated": "November 27, 2026",
+  "source_note": "Physician appointment began in April 2024, confirmed by the author on October 30, 2026. Education dates are retained from the previously published CV dated August 29, 2026; the doctorate remains in progress. Publications, teaching, writing, memberships, awards and presentations are synchronized with the October 30, 2026 researchmap audit and publisher/PubMed evidence. The author confirmed peer review of the 2023 Intensive Care Medicine correspondence and the 2022 Nagasaki Medical Journal article. English titles of Japanese-language outputs are translations for this CV. Publications and Google Scholar profile reconciled with publisher, PubMed and Crossref records on November 8, 2026. Journal publications, corrections, conference abstracts and preprints are listed separately. Publisher and university records checked November 27, 2026.",
   "positions": [
     [
       "April 2026 - present",
@@ -241,7 +241,7 @@
       "corresponding": null
     },
     "https://doi.org/10.1007/s00134-026-08634-9": {
-      "details": "Published online November 2, 2026",
+      "details": "2026;52(11):2468–2469",
       "doi": "10.1007/s00134-026-08634-9",
       "venue": "Intensive Care Medicine",
       "article_type": "Correspondence",
@@ -250,6 +250,26 @@
       "co_first_author": false,
       "corresponding": true,
       "pmid": "42970130"
+    },
+    "https://doi.org/10.1016/j.chstcc.2026.100351": {
+      "details": "Published online November 10, 2026. Article 100351",
+      "doi": "10.1016/j.chstcc.2026.100351",
+      "venue": "CHEST Critical Care",
+      "article_type": "Research Letter",
+      "peer_reviewed": true,
+      "first_author": false,
+      "co_first_author": false,
+      "corresponding": false
+    },
+    "https://doi.org/10.21203/rs.3.rs-9454619/v1": {
+      "details": "Posted May 7, 2026. Version 1. Preprint of the article in Intensive Care Medicine",
+      "doi": "10.21203/rs.3.rs-9454619/v1",
+      "venue": "Research Square",
+      "article_type": "Preprint",
+      "peer_reviewed": false,
+      "first_author": true,
+      "co_first_author": false,
+      "corresponding": null
     }
   },
   "conference_abstract": {
@@ -290,7 +310,7 @@
     "June 2021 - present",
     "November 2020 - present"
   ],
-  "updated_iso": "2026-11-08",
+  "updated_iso": "2026-11-27",
   "google_scholar_url": "https://scholar.google.com/citations?user=UVULTp0AAAAJ&hl=en",
   "peer_review_service": [
     {

@@ -31,7 +31,7 @@ def paper(p,year,lang):
   role='学会抄録' if lang=='ja' else 'Conference abstract'
  authors=esc(p['authorsPre'])+f'<strong>{esc(p["me"])}</strong>'+esc(p['authorsPost'])
  review=('査読あり' if lang=='ja' else 'Peer reviewed') if p.get('peerReviewed') else ('演題査読あり' if lang=='ja' else 'Reviewed abstract') if p.get('abstractReviewed') else ''
- kind={'correspondence': ('レター（Correspondence）','Correspondence'), 'correction': ('訂正','Correction'), 'preprint': ('プレプリント（査読前）','Preprint; not peer reviewed')}.get(p.get('type'), ('',''))[lang=='en']
+ kind={'letter': ('リサーチレター','Research Letter'), 'correspondence': ('レター（Correspondence）','Correspondence'), 'correction': ('訂正','Correction'), 'preprint': ('プレプリント（査読前）','Preprint; not peer reviewed')}.get(p.get('type'), ('',''))[lang=='en']
  tags=' · '.join(x for x in [review,role,kind] if x)
  note=f'<p class="publication-note">{esc(p["publicationNote"])}</p>' if p.get('publicationNote') else ''
  return f'<li class="paper"><div class="paper-meta"><span>{esc(p["venue"])}</span>{f"<span>{esc(tags)}</span>" if tags else ""}</div><h5 lang="{text_lang(p["title"])}"><a href="{esc(p["href"])}" target="_blank" rel="noopener noreferrer">{esc(p["title"])}<span class="record-arrow" aria-hidden="true">↗</span></a></h5><p class="authors" lang="{text_lang(p["authorsPre"]+p["me"]+p["authorsPost"])}">{authors}</p>{note}</li>'
@@ -60,7 +60,7 @@ for lang in ['ja','en']:
  author='中島 誉也' if not en else 'Takaya Nakashima'
  profile_meta=[('所属','長崎大学病院 麻酔集中治療部','臨床研究センター 助手'),('大学院','長崎大学大学院 医歯薬学総合研究科','麻酔集中治療 博士課程'),('共同研究','TXP Medical',''),('資格・使用言語','統計検定 準1級','R・Python')] if not en else [('Affiliation','Nagasaki University Hospital','Anesthesiology & Intensive Care / Clinical Research Center'),('Graduate program','Nagasaki University','Doctoral program in Anesthesiology & Intensive Care Medicine'),('Collaboration','TXP Medical',''),('Skills','JSS Certificate, Grade Pre-1','R and Python')]
  meta=''.join(f'<div><dt>{esc(a)}</dt><dd>{esc(b)}{f"<small>{esc(c)}</small>" if c else ""}</dd></div>' for a,b,c in profile_meta)
- awards=''.join(f'<li><span>{esc(a["date"])}</span><div><h3>{esc(a["title"])}</h3><p>{esc(a["org"])}</p><p>{esc(a["desc"])}</p></div></li>' for a in d['awards'])
+ awards=''.join(f'<li><span>{esc(a["date"])}</span><div><h3>{link(a["href"],esc(a["title"])) if a.get("href") else esc(a["title"])}</h3><p>{esc(a["org"])}</p><p>{esc(a["desc"])}</p></div></li>' for a in d['awards'])
  societies=''.join(f'<li>{esc(x["name"])} <span>{esc(x["since"])}</span></li>' for x in d['societies'])
  themes=''.join(f'<div class="research-row"><span class="theme-no">0{i+1}</span><h4>{esc(x["title"])}</h4><p>{esc(x["body"])}</p></div>' for i,x in enumerate(cp['researchThemes']))
  worklinks=['https://app.j-ka.or.jp/#/dashboard','https://researchmap.jp/nakataka8228/presentations/55017365']
@@ -75,7 +75,8 @@ for lang in ['ja','en']:
   ('conference_abstract','abstracts',('学会抄録','Conference abstracts')),
   ('preprint','preprints',('プレプリント','Preprints')),
  ]:
-  rows=[(y,p) for y,p in all_papers if p.get('type')==record_type]
+  included_types = {'correspondence', 'letter'} if record_type == 'correspondence' else {record_type}
+  rows=[(y,p) for y,p in all_papers if p.get('type') in included_types]
   if not rows: continue
   heading=labels[en]
   if record_type=='journal_article':
@@ -117,7 +118,7 @@ for lang in ['ja','en']:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@500&family=DM+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{base}style.css?v=20261030c">
+<link rel="stylesheet" href="{base}style.css?v=20261127">
 <script defer src="{base}site.js?v=20261030c"></script>
 <script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'Person','name':'中島誉也','alternateName':'Takaya Nakashima','jobTitle':'Anesthesiologist and Biostatistician','url':'https://nakashimatakaya.github.io/','image':'https://nakashimatakaya.github.io/portrait.jpg','worksFor':{'@type':'Organization','name':'Nagasaki University Hospital'},'sameAs':[SCHOLAR,'https://researchmap.jp/nakataka8228',LINKEDIN,'https://orcid.org/0009-0001-4214-3945','https://github.com/nakashimatakaya']},ensure_ascii=False)}</script>
 </head>

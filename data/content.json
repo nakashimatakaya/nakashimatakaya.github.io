@@ -5,6 +5,35 @@
         "year": "2026",
         "items": [
           {
+            "href": "https://doi.org/10.1016/j.chstcc.2026.100351",
+            "title": "Dissociation between ventilator-associated event surveillance and mortality with higher PEEP",
+            "authorsPre": "M. Nishikimi, K. Nishida, S. Nakahashi, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto, Y. Tanabe, S. Ohshimo, N. Shime",
+            "authorsFull": [
+              "Mitsuaki Nishikimi",
+              "Kazuki Nishida",
+              "Susumu Nakahashi",
+              "Takaya Nakashima",
+              "Tadahiro Goto",
+              "Yuko Tanabe",
+              "Shinichiro Ohshimo",
+              "Nobuaki Shime"
+            ],
+            "journal": "CHEST Critical Care",
+            "venue": "CHEST Critical Care. 2026. Article 100351",
+            "publicationDate": "2026-11-10",
+            "doi": "10.1016/j.chstcc.2026.100351",
+            "articleNumber": "100351",
+            "first": false,
+            "coFirst": false,
+            "corresponding": false,
+            "type": "letter",
+            "articleType": "Research Letter",
+            "peerReviewed": true,
+            "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S2949788426001188"
+          },
+          {
             "href": "https://doi.org/10.1007/s00134-026-08634-9",
             "title": "Is a noradrenaline dose threshold already too late for adjunctive vasopressin initiation? Author’s reply",
             "authorsPre": "",
@@ -18,13 +47,13 @@
               "Tetsuya Hara"
             ],
             "journal": "Intensive Care Medicine",
-            "venue": "Intensive Care Medicine. Published online November 2, 2026",
+            "venue": "Intensive Care Medicine 52(11):2468–2469",
             "publicationDate": "2026-11-02",
             "doi": "10.1007/s00134-026-08634-9",
             "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42970130/",
-            "volume": null,
-            "issue": null,
-            "pages": null,
+            "volume": "52",
+            "issue": "11",
+            "pages": "2468–2469",
             "first": true,
             "coFirst": false,
             "corresponding": true,
@@ -33,7 +62,7 @@
             "peerReviewed": true,
             "sourceUrl": "https://link.springer.com/article/10.1007/s00134-026-08634-9",
             "sharedItUrl": "https://rdcu.be/FtK1nnPmN3fa",
-            "status": "published_version_of_record_ahead_of_print",
+            "status": "published_version_of_record",
             "peerReviewEvidence": "Peer review confirmed; publisher article type and PubMed Letter record verified November 8, 2026.",
             "researchmapUrl": "https://researchmap.jp/nakataka8228/published_papers/55402427"
           },
@@ -165,6 +194,35 @@
             ],
             "venue": "Scientific Reports 16(1):14765",
             "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42120559"
+          },
+          {
+            "href": "https://doi.org/10.21203/rs.3.rs-9454619/v1",
+            "title": "Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a target trial emulation",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Ichinomiya, M. Nakajima, T. Shinozaki, J. Shibata, T. Goto, S. Sato, T. Hara",
+            "authorsFull": [
+              "Takaya Nakashima",
+              "Taiga Ichinomiya",
+              "Mikio Nakajima",
+              "Tomohiro Shinozaki",
+              "Junichiro Shibata",
+              "Tadahiro Goto",
+              "Shuntaro Sato",
+              "Tetsuya Hara"
+            ],
+            "journal": "Research Square",
+            "venue": "Research Square, version 1",
+            "publicationDate": "2026-05-07",
+            "doi": "10.21203/rs.3.rs-9454619/v1",
+            "first": true,
+            "coFirst": false,
+            "corresponding": null,
+            "type": "preprint",
+            "articleType": "Preprint",
+            "peerReviewed": false,
+            "publishedVersionUrl": "https://doi.org/10.1007/s00134-026-08575-3",
+            "publicationNote": "Intensive Care Medicine掲載論文の査読前原稿。"
           },
           {
             "doi": "10.1016/j.ekir.2026.104712",
@@ -828,6 +886,15 @@
     ],
     "talks": [
       {
+        "date": "2026.11.04",
+        "title": "AI時代の臨床研究者の立ち振る舞い方（AI時代における研究者の価値はどうなるのか）",
+        "meta": "長崎大学病院 臨床研究センター、2026年度 臨床研究に関する研修会。オンライン、17:30–18:30。",
+        "tag": "研修会講師",
+        "href": "https://www.mh.nagasaki-u.ac.jp/research/news/data/2026/20261104_seminar2026.pdf",
+        "plain": true,
+        "highlight": false
+      },
+      {
         "date": "2026.10.13",
         "title": "生成AI支援による統計解析実務の有用性と課題",
         "meta": "SASユーザー総会2026 Day0企画セッション「アカデミアでの統計解析業務はどう進めるべきか」。中島誉也、佐藤俊太朗。SAS Institute Japan本社。公開プログラムに基づく。",
@@ -878,6 +945,15 @@
         "title": "集中治療を要した菌血症患者における菌種と転帰の関連：過去起点コホート研究",
         "meta": "第51回 日本集中治療医学会学術集会",
         "tag": "口演",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2023.12.07",
+        "title": "日々忙しい研究者がコスパ良く論文を書くためのTips",
+        "meta": "長崎大学病院 臨床研究センター、2023年度 臨床研究に関する研修会。オンライン、17:00–18:00。",
+        "tag": "研修会講師",
+        "href": "https://www.mh.nagasaki-u.ac.jp/research/news/data/2023/20231207_seminar2023.pdf",
         "plain": true,
         "highlight": false
       },
@@ -962,6 +1038,14 @@
     ],
     "awards": [
       {
+        "date": "2026.11",
+        "tag": "PAPER AWARD",
+        "title": "令和8年度 長崎大学インパクト論文賞",
+        "org": "長崎大学",
+        "desc": "Phenotypes of Functional Decline or Recovery in Sepsis ICU Survivors: Insights From a 1-Year Follow-Up Multicenter Cohort Analysis (Critical Care Medicine).",
+        "href": "https://www.nagasaki-u.ac.jp/ja/news/include/file/article/images/2026/11/20261120.pdf"
+      },
+      {
         "date": "2026.09",
         "tag": "BEST PRESENTATION",
         "title": "九州麻酔科学会 第64回大会 最優秀演題",
@@ -1003,10 +1087,10 @@
       }
     ],
     "news": {
-      "label": "新着レター",
-      "date": "2026.11.02",
-      "title": "バソプレシンの開始時期に関するAuthor’s replyがICMに掲載されました",
-      "href": "https://doi.org/10.1007/s00134-026-08634-9"
+      "label": "受賞",
+      "date": "2026.11.20",
+      "title": "敗血症患者の退院後1年間を追った研究で長崎大学インパクト論文賞を受賞しました",
+      "href": "https://www.nagasaki-u.ac.jp/ja/news/news5175.html"
     }
   },
   "en": {
@@ -1014,6 +1098,35 @@
       {
         "year": "2026",
         "items": [
+          {
+            "href": "https://doi.org/10.1016/j.chstcc.2026.100351",
+            "title": "Dissociation between ventilator-associated event surveillance and mortality with higher PEEP",
+            "authorsPre": "M. Nishikimi, K. Nishida, S. Nakahashi, ",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Goto, Y. Tanabe, S. Ohshimo, N. Shime",
+            "authorsFull": [
+              "Mitsuaki Nishikimi",
+              "Kazuki Nishida",
+              "Susumu Nakahashi",
+              "Takaya Nakashima",
+              "Tadahiro Goto",
+              "Yuko Tanabe",
+              "Shinichiro Ohshimo",
+              "Nobuaki Shime"
+            ],
+            "journal": "CHEST Critical Care",
+            "venue": "CHEST Critical Care. 2026. Article 100351",
+            "publicationDate": "2026-11-10",
+            "doi": "10.1016/j.chstcc.2026.100351",
+            "articleNumber": "100351",
+            "first": false,
+            "coFirst": false,
+            "corresponding": false,
+            "type": "letter",
+            "articleType": "Research Letter",
+            "peerReviewed": true,
+            "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S2949788426001188"
+          },
           {
             "href": "https://doi.org/10.1007/s00134-026-08634-9",
             "title": "Is a noradrenaline dose threshold already too late for adjunctive vasopressin initiation? Author’s reply",
@@ -1028,13 +1141,13 @@
               "Tetsuya Hara"
             ],
             "journal": "Intensive Care Medicine",
-            "venue": "Intensive Care Medicine. Published online November 2, 2026",
+            "venue": "Intensive Care Medicine 52(11):2468–2469",
             "publicationDate": "2026-11-02",
             "doi": "10.1007/s00134-026-08634-9",
             "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42970130/",
-            "volume": null,
-            "issue": null,
-            "pages": null,
+            "volume": "52",
+            "issue": "11",
+            "pages": "2468–2469",
             "first": true,
             "coFirst": false,
             "corresponding": true,
@@ -1043,7 +1156,7 @@
             "peerReviewed": true,
             "sourceUrl": "https://link.springer.com/article/10.1007/s00134-026-08634-9",
             "sharedItUrl": "https://rdcu.be/FtK1nnPmN3fa",
-            "status": "published_version_of_record_ahead_of_print",
+            "status": "published_version_of_record",
             "peerReviewEvidence": "Peer review confirmed; publisher article type and PubMed Letter record verified November 8, 2026.",
             "researchmapUrl": "https://researchmap.jp/nakataka8228/published_papers/55402427"
           },
@@ -1175,6 +1288,35 @@
             ],
             "venue": "Scientific Reports 16(1):14765",
             "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/42120559"
+          },
+          {
+            "href": "https://doi.org/10.21203/rs.3.rs-9454619/v1",
+            "title": "Ultra-early versus early adjunctive vasopressin initiation after norepinephrine escalation in septic shock: a target trial emulation",
+            "authorsPre": "",
+            "me": "T. Nakashima",
+            "authorsPost": ", T. Ichinomiya, M. Nakajima, T. Shinozaki, J. Shibata, T. Goto, S. Sato, T. Hara",
+            "authorsFull": [
+              "Takaya Nakashima",
+              "Taiga Ichinomiya",
+              "Mikio Nakajima",
+              "Tomohiro Shinozaki",
+              "Junichiro Shibata",
+              "Tadahiro Goto",
+              "Shuntaro Sato",
+              "Tetsuya Hara"
+            ],
+            "journal": "Research Square",
+            "venue": "Research Square, version 1",
+            "publicationDate": "2026-05-07",
+            "doi": "10.21203/rs.3.rs-9454619/v1",
+            "first": true,
+            "coFirst": false,
+            "corresponding": null,
+            "type": "preprint",
+            "articleType": "Preprint",
+            "peerReviewed": false,
+            "publishedVersionUrl": "https://doi.org/10.1007/s00134-026-08575-3",
+            "publicationNote": "Preprint of the article published in Intensive Care Medicine."
           },
           {
             "doi": "10.1016/j.ekir.2026.104712",
@@ -1838,6 +1980,15 @@
     ],
     "talks": [
       {
+        "date": "2026.11.04",
+        "title": "How will AI change the role of clinical researchers?",
+        "meta": "Clinical Research Seminar, Clinical Research Center, Nagasaki University Hospital. Online, 17:30–18:30 JST.",
+        "tag": "SEMINAR LECTURER",
+        "href": "https://www.mh.nagasaki-u.ac.jp/research/news/data/2026/20261104_seminar2026.pdf",
+        "plain": true,
+        "highlight": false
+      },
+      {
         "date": "2026.10.13",
         "title": "Benefits and challenges of generative AI assistance in statistical analysis practice",
         "meta": "SAS User Meeting 2026, Day 0 session on statistical analysis in academia. Takaya Nakashima and Shuntaro Sato. SAS Institute Japan headquarters. Listed in the published program.",
@@ -1888,6 +2039,15 @@
         "title": "Causative organism and outcome in bacteremia requiring intensive care: a retrospective cohort study",
         "meta": "51st Annual Meeting, Japanese Society of Intensive Care Medicine",
         "tag": "ORAL",
+        "plain": true,
+        "highlight": false
+      },
+      {
+        "date": "2023.12.07",
+        "title": "Writing papers efficiently: tips for busy researchers",
+        "meta": "Clinical Research Seminar, Clinical Research Center, Nagasaki University Hospital. Online, 17:00–18:00 JST.",
+        "tag": "SEMINAR LECTURER",
+        "href": "https://www.mh.nagasaki-u.ac.jp/research/news/data/2023/20231207_seminar2023.pdf",
         "plain": true,
         "highlight": false
       },
@@ -1972,6 +2132,15 @@
     ],
     "awards": [
       {
+        "date": "2026.11",
+        "tag": "PAPER AWARD",
+        "title": "Nagasaki University Impactful Paper Award",
+        "org": "Nagasaki University",
+        "desc": "Phenotypes of Functional Decline or Recovery in Sepsis ICU Survivors: Insights From a 1-Year Follow-Up Multicenter Cohort Analysis (Critical Care Medicine).",
+        "href": "https://www.nagasaki-u.ac.jp/ja/news/include/file/article/images/2026/11/20261120.pdf",
+        "cvDetail": "For a multicenter study of functional decline and recovery in sepsis survivors, published in Critical Care Medicine."
+      },
+      {
         "date": "2026.09",
         "tag": "BEST PRESENTATION",
         "title": "Best Presentation Award, 64th Annual Meeting of the Kyushu Society of Anesthesiologists",
@@ -2013,10 +2182,10 @@
       }
     ],
     "news": {
-      "label": "NEW CORRESPONDENCE",
-      "date": "2026.11.02",
-      "title": "Author’s reply on the timing of adjunctive vasopressin in Intensive Care Medicine",
-      "href": "https://doi.org/10.1007/s00134-026-08634-9"
+      "label": "PAPER AWARD",
+      "date": "2026.11.20",
+      "title": "Nagasaki University Impactful Paper Award for a one-year follow-up study of sepsis survivors",
+      "href": "https://www.nagasaki-u.ac.jp/ja/news/news5175.html"
     }
   }
 }

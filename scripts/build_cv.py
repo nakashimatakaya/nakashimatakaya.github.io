@@ -86,7 +86,7 @@ def publication_group(p):
     article_type = publication_metadata(p).get('article_type', '').strip().casefold()
     if article_type in {'original article', 'original research', 'research article'}:
         return 'Original articles'
-    if article_type in {'letter', 'letter to the editor', 'correspondence', 'reply', 'author reply'}:
+    if article_type in {'letter', 'letter to the editor', 'research letter', 'correspondence', 'reply', 'author reply'}:
         return 'Letters and correspondence'
     raise ValueError(f"Unclassified CV article type {article_type!r} for {p['title']}")
 
@@ -188,8 +188,6 @@ for record_type, heading in [('correction', 'Corrections'), ('conference_abstrac
     items = [p for p in records if p['type'] == record_type]
     if not items:
         continue
-    if record_type == 'conference_abstract':
-        story.append(PageBreak())
     section(heading)
     if record_type == 'preprint':
         story.append(para('Preprints have not completed journal peer review.', 'small'))
@@ -204,7 +202,6 @@ if CV.get('peer_review_service'):
     section('Peer review service')
     story.append(para('<br/>'.join(esc(x['years'])+' | '+esc(x['journal']) for x in CV['peer_review_service']), 'small'))
 
-story.append(PageBreak())
 section('Books, chapters, translations and articles')
 story.append(para('Japanese-language outputs; English titles below are translations for this CV.', 'small'))
 for x in SITE['writings']:
@@ -214,9 +211,8 @@ for x in CV['research_outputs']:
     story.append(KeepTogether([para('<b>'+esc(x['title'])+'</b><br/>'+esc(x['body'])+' '+url(x['href'],x['label']), 'compact')]))
 section('Awards')
 for x in SITE['awards']:
-    entry(x['date'],x['title'],x['org'], style='compact')
+    entry(x['date'], x['title'], x.get('cvDetail', x['org']), x.get('href'), style='compact')
 
-story.append(PageBreak())
 section('Invited lectures and conference presentations')
 story.append(para('Titles translated from Japanese. The SAS entry records the published program listing.', 'small'))
 for x in SITE['talks']:

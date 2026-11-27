@@ -59,6 +59,10 @@
     if (opened) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant' }));
   }
   window.addEventListener('hashchange', revealAnchor);
+  document.querySelector('.talk-index nav')?.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (link && link.hash === location.hash) revealAnchor();
+  });
   revealAnchor();
 
   function configureMotion() {

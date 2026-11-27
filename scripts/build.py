@@ -22,7 +22,37 @@ def record(x,lang,kind='talk'):
  tag=esc(x['tag']);title=esc(x['title']);date=esc(x['date'])
  if x.get('href'): title=f'<a href="{esc(x["href"])}" target="_blank" rel="noopener noreferrer">{title}<span class="record-arrow" aria-hidden="true">↗</span></a>'
  desc=f'<p>{esc(x["description"])}</p>' if x.get('description') else ''
+ if kind == 'talk':
+  when = x['date'].replace('.', '-')
+  return (
+   f'<li class="talk-entry"><div class="talk-byline"><time datetime="{esc(when)}">{date}</time><span>{tag}</span></div>'
+   f'<h4 lang="{text_lang(x["title"])}">{title}</h4><p class="talk-event">{meta}</p>{desc}</li>'
+  )
  return f'<li class="record {"upcoming" if x.get("upcoming") else ""}"><div class="record-date"><span>{date}</span><small>{tag}</small></div><div class="record-body"><h3 lang="{text_lang(x["title"])}">{title}</h3><p class="record-meta">{meta}</p>{desc}</div></li>'
+def talk_archive(talks, lang):
+ groups = {}
+ for item in sorted(talks, key=lambda talk: talk['date'], reverse=True):
+  year = item['date'].split('.', 1)[0]
+  groups.setdefault(year, []).append(item)
+ year_links = []
+ sections = []
+ for index, (year, entries) in enumerate(groups.items()):
+  anchor = f'talks-{esc(year)}'
+  year_links.append(f'<a href="#{anchor}">{esc(year)}</a>')
+  count = len(entries)
+  count_label = f'{count}件' if lang == 'ja' else f'{count} talk' + ('s' if count != 1 else '')
+  entries_html = ''.join(record(item, lang) for item in entries)
+  sections.append(
+   f'<details class="talk-year" id="{anchor}"{" open" if index == 0 else ""}><summary><h3>'
+   f'<span>{esc(year)}</span><small>{count_label}</small><span class="plus" aria-hidden="true"></span>'
+   f'</h3></summary><ol class="talk-entries">{entries_html}</ol></details>'
+  )
+ nav_label = '講演・学会発表の開催年' if lang == 'ja' else 'Talks by year'
+ total = f'全{len(talks)}件' if lang == 'ja' else f'{len(talks)} talks and presentations'
+ return (
+  f'<div class="talk-index"><span>{total}</span><nav aria-label="{nav_label}">'
+  f'{"".join(year_links)}</nav></div>{"".join(sections)}'
+ )
 def paper(p,year,lang):
  role=('共同筆頭著者' if lang=='ja' else 'Co-first author') if p.get('coFirst') else ('筆頭著者' if lang=='ja' else 'First author') if p.get('first') else ''
  if p.get('corresponding'):
@@ -49,8 +79,6 @@ for lang in ['ja','en']:
  all_papers=[(g['year'],p) for g in d['pubYears'] for p in g['items']]
  papers=[(y,p) for y,p in all_papers if p.get('type') in {'journal_article','correspondence','letter'}]
  abstracts=[(y,p) for y,p in all_papers if p.get('type')=='conference_abstract']
- earlier_talks=d['talks'][4:]
- earlier_talks_label=f'過去の学会発表を見る（{len(earlier_talks)}件）' if not en else f'Earlier presentations ({len(earlier_talks)})'
  nav=[('profile','Profile' if en else 'プロフィール'),('research','Research' if en else '研究・論文'),('writing','Writing' if en else '執筆・発信'),('talks','Talks' if en else '講演'),('teaching','Teaching' if en else '教育')]
  title='Takaya Nakashima, M.D. | Anesthesiology, critical care and biostatistics' if en else '中島誉也 | 臨床と統計の橋渡しを。'
  hero='<span class="hero-line">Clinical care.</span><span class="hero-line"><em>Statistical thinking.</em></span>' if en else '<span class="hero-line">臨床と統計の</span><span class="hero-line"><em>橋渡し</em>を。</span>'
@@ -68,6 +96,7 @@ for lang in ['ja','en']:
  keywords=''.join(f'<li>{esc(x)}</li>' for x in d['keywords'])
  notes=''.join(f'<li><a href="{esc(x["href"])}" target="_blank" rel="noopener noreferrer"><span class="note-date">{esc(x["date"])}</span><h4 lang="{text_lang(x["title"])}">{esc(x["title"].replace(" — ","：" if not en else ": "))}</h4><span aria-hidden="true">↗</span></a></li>' for x in d['notes'])
  publication_blocks=[]
+ publication_links=[]
  for record_type, anchor, labels in [
   ('journal_article','papers',('原著論文','Original articles')),
   ('correspondence','letters',('レター・Correspondence','Letters and correspondence')),
@@ -79,6 +108,7 @@ for lang in ['ja','en']:
   rows=[(y,p) for y,p in all_papers if p.get('type') in included_types]
   if not rows: continue
   heading=labels[en]
+  publication_links.append(f'<li><a href="#{anchor}"><span>{esc(heading)}</span><span class="index-count">{len(rows)}</span></a></li>')
   if record_type=='journal_article':
    latest_year=max(y for y,p in rows)
    recent=[(y,p) for y,p in rows if y==latest_year]
@@ -89,8 +119,13 @@ for lang in ['ja','en']:
     body+=f'<details class="disclosure"><summary><span>{esc(label)}</span><span class="plus" aria-hidden="true"></span></summary>{publication_groups(earlier,lang)}</details>'
   else:
    body=publication_groups(rows,lang)
-  publication_blocks.append(f'<div class="publications" id="{anchor}"><div class="subsection-head"><h3>{heading}</h3><span>{len(rows)}</span></div>{body}</div>')
+  back_label='業績目次へ' if not en else 'Publication index'
+  publication_blocks.append(f'<div class="publications" id="{anchor}"><div class="subsection-head publication-heading"><h3>{esc(heading)} <small>{len(rows)}</small></h3><a href="#publications">{back_label}</a></div>{body}</div>')
  publications_html=''.join(publication_blocks)
+ publication_index=f'''<nav class="publication-index" id="publications" aria-labelledby="pub-index-title">
+  <div class="index-heading"><h3 id="pub-index-title">{"研究業績の目次" if not en else "Publication index"}</h3>{link(SCHOLAR, "Google Scholar", "index-source")}</div>
+  <ul>{''.join(publication_links)}</ul>
+ </nav>'''
  review_heading='学術誌の査読' if not en else 'Peer review service'
  review_items=''.join(f'<li>{esc(x["journal"])} <span>{esc(x["years"])}</span></li>' for x in CV.get('peer_review_service',[]))
  service_html=f'<div class="works"><div class="subsection-head"><h3>{review_heading}</h3></div><ul class="society-list">{review_items}</ul></div>' if review_items else ''
@@ -118,8 +153,8 @@ for lang in ['ja','en']:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@500&family=DM+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{base}style.css?v=20261127">
-<script defer src="{base}site.js?v=20261030c"></script>
+<link rel="stylesheet" href="{base}style.css?v=20261127b">
+<script defer src="{base}site.js?v=20261127"></script>
 <script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'Person','name':'中島誉也','alternateName':'Takaya Nakashima','jobTitle':'Anesthesiologist and Biostatistician','url':'https://nakashimatakaya.github.io/','image':'https://nakashimatakaya.github.io/portrait.jpg','worksFor':{'@type':'Organization','name':'Nagasaki University Hospital'},'sameAs':[SCHOLAR,'https://researchmap.jp/nakataka8228',LINKEDIN,'https://orcid.org/0009-0001-4214-3945','https://github.com/nakashimatakaya']},ensure_ascii=False)}</script>
 </head>
 <body>
@@ -145,7 +180,11 @@ for lang in ['ja','en']:
   </div>
   <figure class="hero-photo"><img src="{base}portrait.jpg" alt="{'中島誉也のポートレート' if not en else 'Portrait of Takaya Nakashima'}" width="1968" height="1968" fetchpriority="high"><figcaption>NAGASAKI, JAPAN</figcaption></figure>
  </div>
- <div class="hero-bottom container"><p>CLINICAL CARE<br>AND RESEARCH</p><nav class="hero-index" aria-label="{'業績の概要' if not en else 'Portfolio index'}"><a href="#papers"><strong>{len(papers)}</strong> {'査読論文' if not en else 'Peer-reviewed papers'}</a><a href="#writing"><strong>{len(writings)}</strong> {'執筆・翻訳' if not en else 'Writing & translation'}</a><a href="#talks"><strong>{len(d['talks'])}</strong> {'講演・発表' if not en else 'Talks & presentations'}</a></nav><a href="#profile" class="scroll-cue">SCROLL <span>↓</span></a></div>
+ <nav class="hero-index container" aria-label="{'業績の概要' if not en else 'Portfolio index'}">
+  <a href="#publications"><strong>{len(papers)}</strong><span>{'査読論文' if not en else 'Peer-reviewed papers'}</span></a>
+  <a href="#writing"><strong>{len(writings)}</strong><span>{'執筆・翻訳' if not en else 'Writing & translation'}</span></a>
+  <a href="#talks"><strong>{len(d['talks'])}</strong><span>{'講演・発表' if not en else 'Talks & presentations'}</span></a>
+ </nav>
 </section>
 <aside class="news"><div class="container"><span class="eyebrow">{esc(news['label'])}</span><span class="news-date">{esc(news['date'])}</span><a href="{esc(news['href'])}" target="_blank" rel="noopener noreferrer">{esc(news['title'])}<span aria-hidden="true">↗</span></a></div></aside>
 <section class="section container" id="profile">
@@ -155,7 +194,8 @@ for lang in ['ja','en']:
 </section>
 <section class="section research-section" id="research"><div class="container">
  {section_head('02','RESEARCH','研究と論文' if not en else 'Research & publications',cp['researchIntro'])}
- <div class="selected-research" id="selected-research"><div class="subsection-head"><h3>{'代表研究' if not en else 'Selected research'}</h3><a class="quiet-link" href="#papers">{'全業績へ' if not en else 'All publications'}<span aria-hidden="true">↓</span></a></div><p class="selected-intro">{esc(R[lang]['intro'])}</p>{''.join(selected_study(x,lang).replace('<article ', '<article data-reveal ',1) if i==0 else selected_study(x,lang) for i,x in enumerate(R[lang]['items']))}</div>
+ {publication_index}
+ <div class="selected-research" id="selected-research"><div class="subsection-head"><h3>{'代表研究' if not en else 'Selected research'}</h3></div><p class="selected-intro">{esc(R[lang]['intro'])}</p>{''.join(selected_study(x,lang).replace('<article ', '<article data-reveal ',1) if i==0 else selected_study(x,lang) for i,x in enumerate(R[lang]['items']))}</div>
  <div class="subsection-head methods-heading"><h3>{'研究領域と解析方法' if not en else 'Research focus & methods'}</h3></div>
  <div class="research-themes">{themes}</div>
  <div class="keyword-area"><h3>RESEARCH KEYWORDS</h3><ul>{keywords}</ul></div>
@@ -169,8 +209,7 @@ for lang in ['ja','en']:
 </section>
 <section class="section talks-section" id="talks"><div class="container">
  {section_head('04','TALKS','講演・学会発表' if not en else 'Talks & presentations')}
- <p class="section-caption">{f'{len(d["talks"])}件' if not en else f'{len(d["talks"])} talks and presentations'}</p>
- <ol class="record-list">{''.join(record(x,lang) for x in d['talks'][:4])}</ol><details class="disclosure"><summary><span>{esc(earlier_talks_label)}</span><span class="plus" aria-hidden="true"></span></summary><ol class="record-list">{''.join(record(x,lang) for x in earlier_talks)}</ol></details>
+ {talk_archive(d['talks'],lang)}
 </div></section>
 <section class="section container" id="teaching">
  {section_head('05','TEACHING','担当授業・講座' if not en else 'Teaching',cp['teachingIntro'])}
